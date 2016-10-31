@@ -1,0 +1,52 @@
+```js
+{
+  currentUser: {
+    id: 1,
+    username: "kappa123"
+  },
+  forms: {
+    signUp: {errors: []},
+    logIn: {errors: []},
+    animeLibraries: {errors: ["name can't be blank"]},
+    reviews: {errors: ["body can't be blank"]}
+  },
+  animes: {
+    1: {
+      title: "Shirobako",
+      episodes: 24,
+      score: 8.49,
+      start_date: 2014-10-09,
+      end_date: 2015-03-26,
+      synopsis: "Shirobako begins with five members of ...."
+      image: "https://myanimelist.cdn-dena.com/images/anime/6/68021.jpg"
+
+    }
+  },
+  UserAnimes: {
+    1: {
+      anime_id: 1,
+      user_id: 1,
+      user_rating: 10,
+      library_id: 1,
+      user_start_date: 2015-6-18
+      user_end_date: 2015-6-30
+    }
+  }
+
+  AnimeLibraries: {
+    1: {
+      user_id: 1,
+      name: "Watched"
+    }
+  }
+
+  Reviews: {
+    1: {
+      user_id: 1,
+      anime_id: 1,
+      body: "I liked this show"
+    }
+  }
+
+}
+```

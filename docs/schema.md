@@ -36,7 +36,7 @@ column name   | data type | details
 ------------  |-----------|-----------------------
 id            | integer   | not null, primary key
 name          | string    | not null
-user_anime_id | integer   | not null, foreign key (references user animes), indexed
+user_id       | integer   | not null, foreign key (references users), indexed
 
 ## Reviews
 column name   | data type | details
