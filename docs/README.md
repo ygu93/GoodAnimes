@@ -47,12 +47,16 @@ Objective: Animes can be created and their details can are viewable on a show pa
 
 Objective: Animes can be added to an Anime library and users can create custom anime libraries to animes to. Of these Libraries, the default libraries will include status libraries such as "Will watch, Currently watching, etc " where users can update the status of their Anime.
 
-###Phase 4: Reviews(1 Day)
+###Phase 4: Navbar(1 Day)
+
+Objective: Users to navigate to the homepage and the Anime Index
+
+###Phase 5: Reviews(1 Day)
 
 Objective: Users can add reviews to Animes
 
 
-###Phase 5: CSS(Until Friday 6pm)
+###Phase 6: CSS(Until Friday 6pm)
 Objective: Further CSS styling to ensure good user experience once all MVP features are finished
 
 ###Bonus Features(TBD)
