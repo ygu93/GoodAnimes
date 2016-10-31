@@ -25,7 +25,7 @@ GoodAnimes is a web app inspired by goodreads.com built using a Ruby on Rails ba
 * [DB schema][schema]
 * [Sample State][sample-state]
 
-[wireframes]: docs/wireframes
+[wireframes]: /docs/wireframes
 [components]: /component-hierarchy.md
 [sample-state]: /sample-state.md
 [api-endpoints]: /api-endpoints.md
