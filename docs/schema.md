@@ -27,7 +27,7 @@ id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key (references users), indexed
 anime_id        | integer   | not null, foreign key (references animes), indexed
 user_rating     | integer   |
-library_id      | integer   | not null
+library_id      | integer   | not null, foreign key (references Anime Libraries), indexed
 user_start_date | date      |
 user_end_date   | date      |
 
