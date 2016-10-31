@@ -42,8 +42,7 @@
 
 |Path        | Component   |
 |-------     |-------------|
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
+| "/"        | "AuthFormContainer" |
 | "/home"    | "NavBarContainer" |
 | "/home/User/:Id" | "HomeContainer" |
 | "/home/anime/" | "AnimeIndexContainer" |
