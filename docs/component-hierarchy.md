@@ -47,4 +47,4 @@
 | "/home/User/:Id" | "HomeContainer" |
 | "/home/anime/" | "AnimeIndexContainer" |
 | "/home/anime/:id" | "AnimeDetailsContainer" |
-| "/home/User/:Id/anime/:id/edit" | "EditUserAnimeFormContainer"
+| "/home/UserAnime/:id/edit" | "EditUserAnimeFormContainer"
