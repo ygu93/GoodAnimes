@@ -3,7 +3,7 @@
 
 [Trello link][trello]
 
-[heroku]: http://www.herokuapp.com
+[heroku]: https://goodanimes.herokuapp.com/
 [trello]: https://trello.com/b/i3k7hSTv/goodanime
 
 ##Minimum Viable Product
