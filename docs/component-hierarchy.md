@@ -12,9 +12,6 @@
   * UserAnimeIndexItem
  - AnimeLibraryIndex
   * AnimeLibraryIndexItem
- - Add Library
- - Remove Library
- - Edit User Anime Details Button
 
  **AnimeIndexContainer**
   - AnimeIndexItem
@@ -26,12 +23,10 @@
   * UserAnimeDetails
  - ReviewIndex
   * ReviewIndexItem
- - Add Review Button
 
-**EditUserAnimeFormContainer**
- - EditUserAnime
- - ReviewForm
- - Delete Review Button
+**EditFormContainer**
+ - EditForm
+
 
 
 
@@ -43,8 +38,8 @@
 |Path        | Component   |
 |-------     |-------------|
 | "/"        | "AuthFormContainer" |
-| "/home"    | "NavBarContainer" |
-| "/home/User/:Id" | "HomeContainer" |
-| "/home/anime/" | "AnimeIndexContainer" |
-| "/home/anime/:id" | "AnimeDetailsContainer" |
-| "/home/UserAnime/:id/edit" | "EditUserAnimeFormContainer"
+| "/"        | "NavBarContainer" |
+| "/home"    | "HomeContainer" |
+| "/anime/"  | "AnimeIndexContainer" |
+| "/anime/:id" | "AnimeDetailsContainer" |
+| "/user-anime/:id/edit" | "EditFormContainer"
