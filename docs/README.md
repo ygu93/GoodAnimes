@@ -36,9 +36,9 @@ GoodAnimes is a web app inspired by goodreads.com built using a Ruby on Rails ba
 
 Implementation Timeline
 
-###Phase 1: Backend setup and Front End User Authenticiation(2 days)
+###Phase 1: Backend setup, Front End User Authenticiation and navbar(2 days)
 
-Objective: Functioning rails projects with front-end Authenticiation
+Objective: Functioning rails projects with front-end Authenticiation. Navbar for site will also be done in this time period.
 
 ###Phase 2: Anime Model, API, and components (2 Days)
 
@@ -48,19 +48,14 @@ Objective: Animes can be created and their details can are viewable on a show pa
 
 Objective: Animes can be added to an Anime library and users can create custom anime libraries to animes to. Of these Libraries, the default libraries will include status libraries such as "Will watch, Currently watching, etc " where users can update the status of their Anime.
 
-###Phase 4: Navbar(1 Day)
 
-Objective: Users to navigate to the homepage and the Anime Index
-
-###Phase 5: Reviews(1 Day)
+###Phase 4: Reviews(1 Day)
 
 Objective: Users can add reviews to Animes
 
 
-###Phase 6: CSS(Until Friday 6pm)
-Objective: Further CSS styling to ensure good user experience once all MVP features are finished
 
 ###Bonus Features(TBD)
-- [ ] Recommendations
+- [ ] Infinite pagination
 - [ ] Search Bar
-- [ ] Tags(Genres)
+- [ ] Tags(Genres) and then using genres to generate recommendations

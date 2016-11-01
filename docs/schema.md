@@ -8,7 +8,7 @@ username        | string    | not null, indexed, unique
 password_digest | string    | not null
 session_token   | string    | not null, indexed, unique
 
-## Animes
+## animes
 column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
@@ -20,25 +20,25 @@ image       | string    | not null
 score       | integer   | not null
 episodes    | integer   | not null  
 
-## UserAnimes
+## user_animes
 column name     | data type | details
 ----------------|-----------|-----------------------
 id              | integer   | not null, primary key
 user_id         | integer   | not null, foreign key (references users), indexed
 anime_id        | integer   | not null, foreign key (references animes), indexed
 user_rating     | integer   |
-library_id      | integer   | not null, foreign key (references Anime Libraries), indexed
+library_id      | integer   | not null, foreign key (references anime_libraries), indexed
 user_start_date | date      |
 user_end_date   | date      |
 
-## AnimeLibrary
+## anime_library
 column name   | data type | details
 ------------  |-----------|-----------------------
 id            | integer   | not null, primary key
 name          | string    | not null
 user_id       | integer   | not null, foreign key (references users), indexed
 
-## Reviews
+## reviews
 column name   | data type | details
 ------------  |-----------|-----------------------
 id            | integer   | not null, primary key
