@@ -13,7 +13,7 @@ column name | data type | details
 ------------|-----------|-----------------------
 id          | integer   | not null, primary key
 title       | string    | not null
-Synopsis    | text      | not null
+synopsis    | text      | not null
 start_date  | date      | not null
 end_date    | date      | not null
 image       | string    | not null
