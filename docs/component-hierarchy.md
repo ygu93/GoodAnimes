@@ -4,7 +4,7 @@
  - AuthForm
 
 **NavBarContainer**
-  -Navbar
+  - Navbar
 
 
 **HomeContainer**
@@ -13,8 +13,9 @@
  - AnimeLibraryIndex
   * AnimeLibraryIndexItem
 
- **AnimeIndexContainer**
-  - AnimeIndexItem
+
+**AnimeIndexContainer**
+ - AnimeIndexItem
 
 
 **AnimeDetailsContainer**
@@ -40,6 +41,6 @@
 | "/"        | "AuthFormContainer" |
 | "/"        | "NavBarContainer" |
 | "/home"    | "HomeContainer" |
-| "/anime/"  | "AnimeIndexContainer" |
+| "/anime"  | "AnimeIndexContainer" |
 | "/anime/:id" | "AnimeDetailsContainer" |
 | "/user-anime/:id/edit" | "EditFormContainer"
