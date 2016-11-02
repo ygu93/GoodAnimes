@@ -1,0 +1,28 @@
+// Place all the styles related to the api/sessions controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.authform {
+  border:1px solid black;
+  margin: auto;
+  width: 400px;
+  height: 300px;
+}
+
+.authform > h2{
+  text-align: center;
+}
+
+.auth-input{
+  margin-left: 100px;
+}
+
+.authform  button {
+  margin-left: 175px;
+}
+
+.errors li{
+  list-style: none;
+  color: red;
+}
