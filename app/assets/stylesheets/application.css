@@ -27,12 +27,25 @@
    background-color: #f4f1ea;
  }
 
+ nav > button{
+   border: none;
+   outline: none;
+   cursor: pointer;
+
+ }
+
+ nav > button:hover{
+   background-color:  #382110;
+   color: white;
+ }
+
+
+
 
 
  nav a{
    display: inline-block;
    text-align: right;
-   border-right: 1px solid black;
    padding: 10px;
    padding-top: 20px;
    text-align: center;
@@ -74,7 +87,6 @@
  }
 
  .login{
-   border-left: 1px solid black;
  }
 
  .auth-link{
@@ -120,4 +132,9 @@
    height:27px;
    color: black;
    border-left: 1px solid black;
+ }
+
+ .browse > a:hover{
+   background-color:  #382110;
+   color: white;
  }
