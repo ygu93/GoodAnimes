@@ -19,6 +19,10 @@ class Greeting extends React.Component{
     else{
       return(
       <div className = 'splash'>
+        <video id="background-video" loop autoPlay preload>
+        <source src="https://s3.amazonaws.com/goodanimesvideos/splash.mp4" />
+        Your browser does not support this video.
+        </video>
         <h2 className ='welcome'>Meeting your next favorite Anime</h2>
         <section className = 'descr'>
         <p>

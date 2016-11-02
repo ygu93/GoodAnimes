@@ -18,6 +18,7 @@ class Navbar extends React.Component{
     this.loginClick = this.loginClick.bind(this);
     this.signupClick = this.signupClick.bind(this);
     this.modalClose = this.modalClose.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
   }
 
   modalClose(){
@@ -31,24 +32,29 @@ class Navbar extends React.Component{
   signupClick(){
     this.setState({auth: true, formType:'signup'});
   }
+
+  guestLogin(e){
+    e.preventDefault();
+    const guest = {username:"Guest", password:"password"};
+    this.props.login(guest);
+  }
   render(){
     let currentUser = this.props.currentUser;
     if(currentUser){
       return(
           <nav>
-            <li className='logo'><Link to='/'>goodanimes</Link></li>
-            <li className = 'saber'><img src = "http://images2.fanpop.com/images/photos/6700000/Chibi-Saber-fate-stay-night-6717291-455-500.jpg"/></li>
+            <li className='logo'><Link to='/'><span className='logo1'>good</span><span className='logo2'>animes</span></Link></li>
             <li className='browse'><Link to='/animes'>Browse</Link></li>
-            <li> Hi! {currentUser.username}</li>
-            <button onClick={this.props.logout} className = 'logout'>Logout</button>
+            <li className = "login-message"> Hi {currentUser.username}!</li>
+            <button onClick={this.props.logout} className = 'logout auth-link'>Logout</button>
           </nav>
       );
     }else{
       return(
         <div>
         <nav>
-          <li className='logo'><Link to='/'>goodanimes</Link></li>
-          <li className = 'saber'><img src = "http://images2.fanpop.com/images/photos/6700000/Chibi-Saber-fate-stay-night-6717291-455-500.jpg"/></li>
+          <li className='logo'><Link to='/'><span className='logo1'>good</span><span className='logo2'>animes</span></Link></li>
+          <button className='guest-login auth-link' onClick={this.guestLogin}>Guest Login</button>
           <button className='signup auth-link' onClick={this.signupClick}>Sign Up</button>
           <button className='login auth-link' onClick={this.loginClick}>Log In</button>
 
@@ -57,7 +63,7 @@ class Navbar extends React.Component{
           isOpen={this.state.auth}
           onRequestClose={this.modalClose}
           style={authModalStyle}>
-          <SessionFormContainer formType={this.state.formType}/>
+          <SessionFormContainer formType={this.state.formType} modalClose = {this.modalClose.bind(this)}/>
         </Modal>
         </div>
       );

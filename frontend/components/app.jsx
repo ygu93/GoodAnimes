@@ -6,9 +6,6 @@ const App = ({ children }) => (
     <header>
       <NavbarContainer/>
     </header>
-    <video id="background-video" loop autoPlay>
-    <source src="https://s3.amazonaws.com/goodanimesvideos/splash.mp4" />
-    </video>
     {children}
   </div>
 );
