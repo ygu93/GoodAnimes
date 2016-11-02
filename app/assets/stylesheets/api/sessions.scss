@@ -21,7 +21,18 @@
 
 .authform  button {
   margin-left: 175px;
+  padding: 10px;
 }
+
+.authform label {
+  padding-right: 10px;
+}
+
+#pass-input{
+  padding-right: 14px;
+}
+
+
 
 .errors li{
   list-style: none;

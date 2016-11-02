@@ -9,6 +9,7 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
   formType: ownProps.formType,
+  modalClose: () => ownProps.modalClose(),
   processForm: (user, type) => (type === 'login' ? dispatch(login(user)) : dispatch(signup(user)))
 });
 

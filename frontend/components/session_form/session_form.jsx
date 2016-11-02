@@ -18,9 +18,11 @@ class SessionForm extends React.Component{
     this.props.processForm(user, this.props.formType);
   }
 
+
   updateForm(label){
     return e => this.setState({[label]: e.target.value});
   }
+
 
   componentDidUpdate(){
 		this.redirectIfLoggedIn();
@@ -40,19 +42,19 @@ class SessionForm extends React.Component{
         <h2>{this.props.formType === 'login' ? 'Login': 'Sign up'}</h2>
 
         <form onSubmit={this.handleSubmit}>
-          <label className = 'auth-input'>Username
-          <input type='text' name='user[username]' onChange={this.updateForm('username')}></input>
+          <label htmlFor="username" className = 'auth-input'>Username
           </label>
+          <input type='text' name='user[username]' onChange={this.updateForm('username')} id="username"></input>
           <br/>
           <br/>
-          <label className = 'auth-input'>Password
-          <input type='password' name='user[password]' onChange={this.updateForm('password')}></input>
+          <label className = 'auth-input' htmlFor="password" id="pass-input">Password
           </label>
+          <input type='password' name='user[password]' onChange={this.updateForm('password')} id="password"></input>
           <br/>
           <br/>
           <button>Submit</button>
           <ul className='errors'>
-            {this.props.errors.map(error => <li>{error}</li>)}
+            {this.props.errors.map((error,idx) => <li key={idx}>{error}</li>)}
           </ul>
         </form>
       </div>
