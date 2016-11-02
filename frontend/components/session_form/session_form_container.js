@@ -8,7 +8,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  formType: location.hash === '#/login' ? 'login' : 'signup',
+  formType: ownProps.formType,
   processForm: (user, type) => (type === 'login' ? dispatch(login(user)) : dispatch(signup(user)))
 });
 
