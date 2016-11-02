@@ -39,22 +39,22 @@
    text-decoration: none;
  }
 
- /*#background-video{
+ #background-video{
    position: fixed;
     top: 50%;
     left: 50%;
-    min-width: 100%;
     min-height: 100%;
+    min-width: 100%;
     width: auto;
     height: auto;
     z-index: -100;
     transform: translateX(-50%) translateY(-50%);
- background: url('') no-repeat;
-  background-size: cover;
-  transition: 1s opacity;
+    background: url('') no-repeat;
+    background-size: cover;
+    transition: 1s opacity;
 
 
- }*/
+ }
 
  .logo > a{
    float:left;
@@ -85,9 +85,6 @@
    width: 200px;
  }
 
- *{
-   background-color: #f9f8f4;
- }
 
  .welcome{
    text-align: center;
