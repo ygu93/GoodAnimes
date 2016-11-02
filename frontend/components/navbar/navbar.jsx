@@ -45,7 +45,6 @@ class Navbar extends React.Component{
           <nav>
             <li className='logo'><Link to='/'><span className='logo1'>good</span><span className='logo2'>animes</span></Link></li>
             <li className='browse'><Link to='/animes'>Browse</Link></li>
-            <li className = "login-message"> Hi {currentUser.username}!</li>
             <button onClick={this.props.logout} className = 'logout auth-link'>Logout</button>
           </nav>
       );
