@@ -10,7 +10,7 @@ require 'net/http'
 require 'uri'
 
 def anime_seed
-  queries = ["fate", "shirobako", "shigatsu", "clannad", "railgun", "geass", "chihayafuru", "bakemonogatari"]
+  queries = ["fate", "shirobako", "shigatsu", "clannad", "railgun", "geass", "chihayafuru", "bakemonogatari", "haikyuu"]
   queries.each do |query|
     uri = URI.parse("https://myanimelist.net/api/anime/search.xml?q=#{query}")
     request = Net::HTTP::Get.new(uri)
