@@ -8,8 +8,9 @@ class AnimeIndex extends React.Component{
 
   render(){
     return(
-    <div className ="anime-index">
-      <ul>
+    <div className ="browse-page">
+      <h2>Check out some of the top Animes</h2>
+      <ul className ="anime-index">
       {this.props.animes.map((anime, idx) => <AnimeIndexItem key={idx} anime={anime}/>)}
       </ul>
     </div>

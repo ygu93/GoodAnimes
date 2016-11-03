@@ -1,3 +1,4 @@
+
 json.extract! @anime,
   :id,
   :title,
@@ -6,4 +7,6 @@ json.extract! @anime,
   :end_date,
   :image,
   :score,
-  :episodes
+  :episodes,
+  :media_type,
+  :status

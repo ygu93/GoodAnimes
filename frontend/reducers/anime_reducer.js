@@ -9,8 +9,7 @@ const AnimeReducer = (state={}, action) => {
     case RECEIVE_ALL_ANIMES:
       return action.animes;
     case RECEIVE_ANIME:
-      dup[action.anime.id]=action.anime;
-      return dup;
+      return merge({}, state, action.anime);
     default:
       return state;
   }

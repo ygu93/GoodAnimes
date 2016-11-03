@@ -3,6 +3,7 @@ class Api::AnimesController < ApplicationController
   def index
     @animes = Anime.all
     @animes = @animes.sort{ |a, b| a["score"] <=> b["score"] }.reverse
+    @animes = @animes.take(56)
   end
 
   def create
@@ -15,6 +16,6 @@ class Api::AnimesController < ApplicationController
   end
   private
   def anime_params
-    params.require(:anime).permit(:title, :synopsis, :start_date, :end_date, :image, :score, :episodes)
+    params.require(:anime).permit(:title, :synopsis, :start_date, :end_date, :image, :score, :episodes, :status, :media_type)
   end
 end
