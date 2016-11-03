@@ -8,9 +8,9 @@ class AnimeIndexItem extends React.Component{
   render(){
     const handleClick = url => e => this.props.router.push(url);
     return(
-      <li onClick ={handleClick(`/anime/${this.props.anime.id}`)}>
-        {this.props.anime.title}
+      <li onClick ={handleClick(`/anime/${this.props.anime.id}`)} className='anime-index-item'>
         <img src={this.props.anime.image}/>
+        <p>{this.props.anime.title}</p>
       </li>
     );
   }

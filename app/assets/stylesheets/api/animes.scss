@@ -1,3 +1,69 @@
 // Place all the styles related to the api/animes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.anime-index{
+  list-style: none;
+  display: flex;
+  align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.anime-index > li{
+  width:225px;
+}
+
+.anime-index-item > img{
+  height:310px;
+  width: 200px;
+}
+
+.anime-index-item:hover{
+  filter: brightness(70%);
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.3)
+}
+
+.anime-index-item{
+  border-radius: 25px;
+  border: 1px solid black;
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 20px;
+  margin-left: 20px;
+}
+
+.anime-index-item > p{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.browse-page >h2 {
+  text-align: center;
+}
+
+.anime-details-page  li{
+  list-style: none;
+}
+
+.anime-details{
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  width:60%;
+  margin: auto;
+}
+
+.anime-details-page{
+  margin:0px;
+  display: inline;
+}
+
+.anime-title{
+  text-align: center;
+}
+
+.anime-info{
+  text-align: left;
+}
