@@ -1,5 +1,5 @@
 @animes.each do |anime|
-  json.set! anime.id do
-    json.extract! anime, :id, :title, :image
+  json.set! (@animes.index(anime)+1) do
+    json.extract! anime, :id, :title, :image, :score
   end
 end

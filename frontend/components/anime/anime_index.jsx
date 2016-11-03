@@ -1,5 +1,5 @@
-import React from 'react-redux';
-import AnimeIndexItem from 'anime_index_item';
+import React from 'react';
+import AnimeIndexItem from './anime_index_item';
 
 class AnimeIndex extends React.Component{
   constructor(props){

@@ -1,10 +1,5 @@
-import {fetchAllAnime, fetchAnime} from '../util/anime_api_util.js';
-import {
-  REQUEST_ANIME,
-  REQUEST_ALL_ANIMES,
-  receiveAnime,
-  receiveAllAnimes
-} from '../actions/anime_actions.js';
+import {fetchAllAnime, fetchAnime} from '../util/anime_api_util';
+import {REQUEST_ANIME, REQUEST_ALL_ANIMES, receiveAnime, receiveAllAnimes} from '../actions/anime_actions.js';
 
 const AnimeMiddleware = ({dispatch}) => next => action => {
   const receiveAnimeSuccess = data => dispatch(receiveAnime(data));
