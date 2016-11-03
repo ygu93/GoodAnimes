@@ -29,5 +29,5 @@ def anime_seed
     end
   end
 end
-
+User.create({username:"Guest", password:"password"})
 anime_seed
