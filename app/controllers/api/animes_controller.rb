@@ -1,7 +1,8 @@
 class Api::AnimesController < ApplicationController
 
   def index
-    @animes =  Anime.all.sort{ |a, b| a["score"] <=> b["score"] }.reverse
+    @animes = Anime.all
+    @animes = @animes.sort{ |a, b| a["score"] <=> b["score"] }.reverse
   end
 
   def create

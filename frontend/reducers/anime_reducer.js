@@ -1,5 +1,5 @@
 import React from 'react';
-import {RECEIVE_ANIME, RECEIVE_ALL_ANIMES} from '../actions/session_actions.js';
+import {RECEIVE_ANIME, RECEIVE_ALL_ANIMES} from '../actions/anime_actions.js';
 import merge from 'lodash/merge';
 
 const AnimeReducer = (state={}, action) => {
