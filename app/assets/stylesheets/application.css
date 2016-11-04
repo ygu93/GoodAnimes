@@ -53,20 +53,74 @@
  }
 
  #background-video{
-   position: relative;
-    /*top: 50%;
-    left: 50%;*/
+   position: absolute;;
+    /*top: 50%;*/
+    /*left: 50%;*/
     min-height: 100%;
     min-width: 100%;
     width: auto;
     height: auto;
-    /*transform: translateX(-50%) translateY(-50%);
-    background: url('') no-repeat;*/
+    /*transform: translateX(-50%) translateY(-50%);*/
     background-size: cover;
     transition: 1s opacity;
-    filter: brightness(40%);
+    opacity: 0.9;
+    display: inline-block;
 
 
+
+ }
+
+ .hero-overlay{
+   position: absolute;
+   top:0;
+   bottom: 0;
+   right: 0;
+   left: 0;
+   background-color: rgba(0,0,0,0.5);
+   min-height: 126%;
+   min-width: 100%;
+   width: auto;
+   height: auto;
+ }
+
+ .hero-section{
+   position: relative;
+   height: 100vh;
+ }
+
+ .about{
+   margin-top: 200px;
+ }
+
+ .intro{
+   position: absolute;
+   margin: 0 auto;
+   left: 30%;
+   width:500px;
+   text-align: center;
+   margin-top: 175px;
+ }
+
+ .intro-message{
+   font-size: 20px;
+   color: white;
+   font-weight: bold;
+   text-align: center;
+ }
+
+ .learn-more{
+   font-size: 20px;
+   color: white;
+   text-align: center;
+   font-weight: bold;
+   text-decoration: underline;
+   cursor: pointer;
+ }
+
+ .watermark{
+   font-size: 32px;
+   color: white;
+   font-weight: bold;
  }
 
  .logo > a{
