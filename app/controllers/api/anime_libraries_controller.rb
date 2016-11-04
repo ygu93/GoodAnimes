@@ -5,7 +5,10 @@ class Api::AnimeLibrariesController < ApplicationController
   end
   def create
     @anime_library = AnimeLibrary.new(anime_library_params)
-    render json: @anime_library.errors.full_messages, status:422 unless @anime_library.save
+    if @anime_library.save
+    else
+      render json: @anime_library.errors.full_messages, status:422
+    end
   end
 
   def show
@@ -14,7 +17,10 @@ class Api::AnimeLibrariesController < ApplicationController
   end
 
   def update
-    render json: @anime_library.errors.full_messages, status 422 unless @anime_library.update(anime_library_params)
+    if @anime_library.update(anime_library_params)
+    else
+      render json: @anime_library.errors.full_messages, status 422
+    end
   end
 
   def destroy
