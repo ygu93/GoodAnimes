@@ -12,7 +12,10 @@ class Api::UserAnimesController < ApplicationController
   end
 
   def update
-    render json: @user_anime.errors.full_messages, status 422 unless @user_anime.update(anime_library_params)
+    if @user_anime.update(anime_library_params)
+    else
+      render json: @user_anime.errors.full_messages, status 422
+    end
   end
 
   def destroy
