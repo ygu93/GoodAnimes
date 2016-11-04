@@ -3,6 +3,9 @@ class Api::UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       login(@user)
+      AnimeLibrary.create({user_id:current_user.id, name:"Currently Watching"})
+      AnimeLibrary.create({user_id:current_user.id, name:"Watched"})
+      AnimeLibrary.create({user_id:current_user.id, name:"Plan to Watch"})
       render "api/users/show"
     else
       render json: @user.errors.full_messages, status:422
