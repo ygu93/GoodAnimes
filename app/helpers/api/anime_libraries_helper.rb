@@ -1,0 +1,2 @@
+module Api::AnimeLibrariesHelper
+end

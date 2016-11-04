@@ -66,4 +66,25 @@
 
 .anime-info{
   text-align: left;
+  margin-top: 20px;
+  margin-right: 20px;
+}
+
+.anime-info h4{
+  border-bottom: 1px solid #bebebe;
+  padding-bottom: 5px;
+}
+
+.anime-info span{
+  color: #444444;
+  font-weight: bold;
+}
+
+.synopsis{
+  border-bottom: 1px solid #bebebe;
+  padding-bottom: 5px;
+}
+
+.anime-desc-right{
+  width:50%;
 }

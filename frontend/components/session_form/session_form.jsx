@@ -23,10 +23,10 @@ class SessionForm extends React.Component{
     return e => this.setState({[label]: e.target.value});
   }
 
-
   componentDidUpdate(){
 		this.redirectIfLoggedIn();
 	}
+
 
   redirectIfLoggedIn(){
 		if (this.props.loggedIn){
