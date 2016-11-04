@@ -29,8 +29,8 @@ class Greeting extends React.Component{
       <div className = 'splash'>
         <div className='hero-section'>
           <video id="background-video" loop autoPlay preload>
-          <source src="https://s3.amazonaws.com/goodanimesvideos/splash.mp4" />
-          Your browser does not support this video.
+            <source src="https://s3.amazonaws.com/goodanimesvideos/splash.mp4" />
+            Your browser does not support this video.
           </video>
           <div className="hero-overlay"></div>
           <div className='intro'>
@@ -56,7 +56,7 @@ class Greeting extends React.Component{
           </p>
         </section>
       </div>
-      </div>
+    </div>
     );
     }
   }

@@ -1,8 +1,11 @@
 class Api::AnimeLibrariesController < ApplicationController
 
   def index
-    @anime_libraries = current_user.libraries
+    @anime_libraries = current_user.anime_libraries
+    @all_animes = current_user.user_animes
+    @all_animes = @all_animes.select {|useranime| useranime.anime_id}.uniq {|anim| anim.anime_id}
   end
+
   def create
     @anime_library = AnimeLibrary.new(anime_library_params)
     if @anime_library.save
@@ -13,7 +16,6 @@ class Api::AnimeLibrariesController < ApplicationController
 
   def show
     @anime_library = AnimeLibrary.find_by_id(params[:id])
-    @animes = @anime_library.animes
   end
 
   def update
