@@ -14,16 +14,16 @@ class AnimeDetails extends React.Component{
 
           <img src={anime.image}></img>
             <li><h4>Information</h4></li>
-            <li>Type: {anime.media_type}</li>
-            <li>Episodes: {anime.episodes}</li>
-            <li>Status: {anime.status}</li>
-            <li>Started On: {anime.start_date}</li>
-            <li>Ended On: {anime.end_date}</li>
-            <li>Score: {anime.score}</li>
+            <li><span>Type:</span> {anime.media_type}</li>
+            <li><span>Episodes:</span> {anime.episodes}</li>
+            <li><span>Status:</span> {anime.status}</li>
+            <li><span>Started On:</span> {anime.start_date}</li>
+            <li><span>Ended On:</span> {anime.end_date}</li>
+            <li><span>Score:</span> {anime.score}</li>
             </div>
-          <div>
+          <div className='anime-desc-right'>
           <li className='anime-title'><h3>{anime.title}</h3></li>
-          <h4>Synopsis</h4>
+          <h4 className='synopsis'>Synopsis</h4>
           <li dangerouslySetInnerHTML={{__html:anime.synopsis}}></li>
           </div>
         </ul>

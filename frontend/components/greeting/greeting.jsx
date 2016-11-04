@@ -12,7 +12,7 @@ class Greeting extends React.Component{
     if(currentUser){
       return(
         <div>
-          <h2> Hi! {currentUser.username}</h2>
+          <h2> Hi! {currentUser.username} Click browse until I am done with this part</h2>
         </div>
       );
     }

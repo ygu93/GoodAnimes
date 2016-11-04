@@ -64,7 +64,7 @@
     background: url('') no-repeat;*/
     background-size: cover;
     transition: 1s opacity;
-    opacity: .5;
+    filter: brightness(40%);
 
 
  }

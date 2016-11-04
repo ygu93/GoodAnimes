@@ -2,6 +2,9 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence:true
   after_initialize :ensure_session_token
   validates :password, length: { minimum:6, allow_nil:true }
+  has_many :anime_libraries
+  has_many :user_animes
+  has_many :animes, through: :user_animes
   attr_reader :password
 
   def self.find_by_credentials(username, password)

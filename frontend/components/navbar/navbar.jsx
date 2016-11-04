@@ -19,6 +19,7 @@ class Navbar extends React.Component{
     this.signupClick = this.signupClick.bind(this);
     this.modalClose = this.modalClose.bind(this);
     this.guestLogin = this.guestLogin.bind(this);
+    this.clearForm = this.clearForm.bind(this);
   }
 
   modalClose(){
@@ -37,6 +38,10 @@ class Navbar extends React.Component{
     e.preventDefault();
     const guest = {username:"Guest", password:"password"};
     this.props.login(guest);
+  }
+
+  clearForm(){
+    this.props.receiveErrors([]);
   }
   render(){
     let currentUser = this.props.currentUser;
@@ -60,6 +65,7 @@ class Navbar extends React.Component{
         </nav>
         <Modal
           isOpen={this.state.auth}
+          onAfterOpen={this.clearForm}
           onRequestClose={this.modalClose}
           style={authModalStyle}>
           <SessionFormContainer formType={this.state.formType} modalClose = {this.modalClose.bind(this)}/>
