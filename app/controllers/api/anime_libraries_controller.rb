@@ -17,10 +17,7 @@ class Api::AnimeLibrariesController < ApplicationController
   end
 
   def update
-    if @anime_library.update(anime_library_params)
-    else
-      render json: @anime_library.errors.full_messages, status 422
-    end
+    render json: @anime_library.errors.full_messages, status:422 if @anime_library.update(anime_library_params)
   end
 
   def destroy
