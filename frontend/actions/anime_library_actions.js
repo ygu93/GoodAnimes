@@ -7,6 +7,7 @@ export const DESTROY_ANIME_LIBRARY = 'DESTROY_ANIME_LIBRARY';
 export const REMOVE_ANIME_LIBRARY = 'REMOVE_ANIME_LIBRARY';
 export const CREATE_ANIME_LIBRARY = 'CREATE_ANIME_LIBRARY';
 export const RECEIVE_ANIME_LIBRARY_ERRORS = 'RECEIVE_ANIME_LIBRARY_ERRORS';
+export const EDIT_ANIME_LIBRARIES = 'EDIT_ANIME_LIBRARIES';
 
 export const requestAllAnimeLibraries = () =>({
   type: REQUEST_ALL_ANIME_LIBRARIES
@@ -34,6 +35,11 @@ export const updateAnimeLibrary = (animeLibrary) => ({
 
 export const destroyAnimeLibrary = (id) => ({
   type:DESTROY_ANIME_LIBRARY,
+  id
+});
+
+export const editAnimeLibraries = (id) => ({
+  type:EDIT_ANIME_LIBRARIES,
   id
 });
 

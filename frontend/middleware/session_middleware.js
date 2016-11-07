@@ -1,9 +1,14 @@
 import {LOGIN, LOGOUT, SIGNUP, receiveCurrentUser, receiveErrors} from '../actions/session_actions.js';
 import {login, logout, signup} from '../util/session_api_util.js';
 import {hashHistory} from 'react-router';
+import {requestAllAnimeLibraries} from '../actions/anime_library_actions';
 
 const SessionMiddleware = ({ getState, dispatch }) => next => action => {
-  const handleSuccess = (user) => dispatch(receiveCurrentUser(user));
+  const handleSuccess = (user) => {
+    dispatch(receiveCurrentUser(user));
+    hashHistory.push('/home');
+    dispatch(requestAllAnimeLibraries());
+  };
   const errorSuccess = (xhr) => dispatch(receiveErrors(xhr.responseJSON));
   const receiveLogoutSuccess = () => {
     hashHistory.push('/');

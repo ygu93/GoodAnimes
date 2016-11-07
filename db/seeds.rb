@@ -52,5 +52,11 @@ def anime_seed
     end
   end
 end
-User.create({username:"Guest", password:"password"})
 anime_seed
+User.create({username:"Guest", password:"password"})
+AnimeLibrary.create({user_id:1, name:"Watched"})
+AnimeLibrary.create({user_id:1, name:"Currently Watching"})
+AnimeLibrary.create({user_id:1, name:"Plan to Watch"})
+AnimeLibrary.create({user_id:1, name:"Action"})
+AnimeLibrary.create({user_id:1, name:"Drama"})
+AnimeLibrary.create({user_id:1, name:"Slice of Life"})

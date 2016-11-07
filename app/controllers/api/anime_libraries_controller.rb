@@ -18,14 +18,23 @@ class Api::AnimeLibrariesController < ApplicationController
     @anime_library = AnimeLibrary.find_by_id(params[:id])
   end
 
+  def edit
+    @anime_libraries = current_user.anime_libraries
+  end
+
   def update
     @anime_library = AnimeLibrary.find_by_id(params[:id])
-    render json: @anime_library.errors.full_messages, status:422 if @anime_library.update(anime_library_params)
+    if @anime_library.update(anime_library_params)
+      render json: @anime_library
+    else
+      render json: @anime_library.errors.full_messages, status:422
+    end
   end
 
   def destroy
     @anime_library = AnimeLibrary.find_by_id(params[:id])
     @anime_library.destroy
+    render json: @anime_library
   end
 
   private

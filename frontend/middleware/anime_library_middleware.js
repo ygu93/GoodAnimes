@@ -3,6 +3,7 @@ import {REQUEST_ALL_ANIME_LIBRARIES,
         UPDATE_ANIME_LIBRARY,
         DESTROY_ANIME_LIBRARY,
         CREATE_ANIME_LIBRARY,
+        EDIT_ANIME_LIBRARIES,
         receiveAnimeLibrary,
         receiveAllAnimeLibraries,
         removeAnimeLibrary,
@@ -14,14 +15,20 @@ import {fetchAnimeLibrary,
         fetchAllAnimeLibraries,
         updateAnimeLibrary,
         createAnimeLibrary,
-        deleteAnimeLibrary} from '../util/anime_library_util.js';
+        deleteAnimeLibrary,
+        editAnimeLibraries} from '../util/anime_library_util.js';
 
 import {hashHistory} from 'react-router';
 
 const AnimeLibraryMiddleware = ({dispatch}) => next => action => {
-  const receiveAnimeLibrarySuccess = data => dispatch(receiveAnimeLibrary(data));
+  const receiveAnimeLibrarySuccess = () => {
+    dispatch(requestAllAnimeLibraries());
+  };
   const receiveAllAnimeLibrariesSuccess = data => dispatch(receiveAllAnimeLibraries(data));
-  const deleteAnimeLibrarySuccess = data => dispatch(removeAnimeLibrary(data));
+  const deleteAnimeLibrarySuccess = data => {
+    dispatch(removeAnimeLibrary(data));
+    dispatch(requestAllAnimeLibraries());
+  };
   const errorSuccess = (xhr) => alert(xhr.responseJSON);
   const createAnimeLibrarySuccess = data => {
     dispatch(requestAllAnimeLibraries());
@@ -42,6 +49,9 @@ const AnimeLibraryMiddleware = ({dispatch}) => next => action => {
       return next(action);
     case CREATE_ANIME_LIBRARY:
       createAnimeLibrary(action.animeLibrary, createAnimeLibrarySuccess, errorSuccess);
+      return next(action);
+    case EDIT_ANIME_LIBRARIES:
+      editAnimeLibraries(receiveAllAnimeLibrariesSuccess);
       return next(action);
     default:
       return next(action);
