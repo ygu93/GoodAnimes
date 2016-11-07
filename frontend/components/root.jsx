@@ -18,13 +18,6 @@ const Root = ({ store }) => {
     return store.dispatch(requestAnime(nextState.params.animeId));
   };
 
-  const _redirectIfLoggedIn = (nextState, replace) => {
-    const currentUser = store.getState().session.currentUser;
-    if (currentUser) {
-      replace('/home');
-    }
-  };
-
   const requestAnimeLibraryIndex = () => store.dispatch(requestAllAnimeLibraries());
   const requestSingleAnimeLibrary = (nextState) => {
     return store.dispatch(requestAnimeLibrary(nextState.params.animeLibraryId));

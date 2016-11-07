@@ -14,11 +14,19 @@ export const fetchAnimeLibrary = (id, success) => {
   });
 };
 
+export const editAnimeLibraries = (success) => {
+  $.ajax({
+    method: 'GET',
+    url: `api/anime_libraries/`,
+    success
+  });
+};
+
 export const updateAnimeLibrary = (animeLibrary, success, error) => {
   $.ajax({
     method: 'PATCH',
     url: `api/anime_libraries/${animeLibrary.id}`,
-    data: {animeLibrary},
+    data: {anime_library: animeLibrary},
     success,
     error
   });

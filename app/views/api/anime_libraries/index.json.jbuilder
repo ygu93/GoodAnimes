@@ -2,7 +2,7 @@
   json.set! 0 do
     json.name "All"
     json.animes @all_animes.each do |user_anime|
-        json.id user_anime.id
+        json.user_anime_id user_anime.id
         json.user_rating user_anime.user_rating
         json.user_start_date user_anime.user_start_date
         json.user_end_date user_anime.user_end_date
@@ -18,7 +18,7 @@
     json.id library.id
     json.name library.name
     json.animes library.user_animes do |user_anime|
-      json.id user_anime.id
+      json.user_anime_id user_anime.id
       json.user_rating user_anime.user_rating
       json.user_start_date user_anime.user_start_date
       json.user_end_date user_anime.user_end_date
