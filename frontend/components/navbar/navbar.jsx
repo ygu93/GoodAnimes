@@ -48,7 +48,7 @@ class Navbar extends React.Component{
     if(currentUser){
       return(
           <nav>
-            <li className='logo'><Link to='/'><span className='logo1'>good</span><span className='logo2'>animes</span></Link></li>
+            <li className='logo'><Link to='/home'><span className='logo1'>good</span><span className='logo2'>animes</span></Link></li>
             <li className='browse'><Link to='/animes'>Browse</Link></li>
             <button onClick={this.props.logout} className = 'logout auth-link'>Logout</button>
           </nav>

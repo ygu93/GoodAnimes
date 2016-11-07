@@ -81,8 +81,6 @@
  .hero-section{
    position: relative;
    height: 95vh;
-   display: flex;
-   justify-content: center;
    overflow: hidden;
  }
 
@@ -95,7 +93,8 @@
    margin: 0 auto;
    width:500px;
    text-align: center;
-   margin-top: 175px;
+   top:30%;
+   left:30%;
  }
 
  .intro-message{
