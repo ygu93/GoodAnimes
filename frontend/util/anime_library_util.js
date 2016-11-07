@@ -27,8 +27,9 @@ export const updateAnimeLibrary = (animeLibrary, success, error) => {
 export const createAnimeLibrary = (animeLibrary, success, error) => {
   $.ajax({
     method: 'POST',
+    dataType:'json',
     url: "api/anime_libraries",
-    data: {animeLibrary},
+    data: {anime_library: animeLibrary},
     success,
     error
   });

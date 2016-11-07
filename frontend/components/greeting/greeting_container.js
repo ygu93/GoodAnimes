@@ -1,13 +1,14 @@
 import {connect} from 'react-redux';
 import Greeting from './greeting';
-import {logout} from '../../actions/session_actions';
+import {logout, receiveErrors} from '../../actions/session_actions';
 
 const mapStateToProps = (state) => ({
   currentUser: state.session.currentUser
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    logout:() => dispatch(logout())
+    logout:() => dispatch(logout()),
+    receiveErrors: (errors) => dispatch(receiveErrors(errors))
 });
 
 

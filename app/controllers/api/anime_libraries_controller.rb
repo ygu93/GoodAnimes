@@ -19,16 +19,18 @@ class Api::AnimeLibrariesController < ApplicationController
   end
 
   def update
+    @anime_library = AnimeLibrary.find_by_id(params[:id])
     render json: @anime_library.errors.full_messages, status:422 if @anime_library.update(anime_library_params)
   end
 
   def destroy
+    @anime_library = AnimeLibrary.find_by_id(params[:id])
     @anime_library.destroy
   end
 
   private
   def anime_library_params
-    params.require(:anime_library).permit(:name)
+    params.require(:anime_library).permit(:name, :user_id)
   end
 
 end
