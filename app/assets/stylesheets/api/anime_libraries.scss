@@ -1,3 +1,22 @@
 // Place all the styles related to the api/anime_libraries controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.home-page{
+  display: flex;
+  justify-content: center;
+}
+
+.home-page li{
+  list-style: none;
+}
+
+.anime-library-details-item img{
+  width:50px;
+  height: 75px;
+  cursor: pointer;
+}
+
+.library-details-title{
+  cursor: pointer;
+}

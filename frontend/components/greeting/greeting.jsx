@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router';
+import {Link, hashHistory} from 'react-router';
 import Scroll from 'react-scroll';
 const Element = Scroll.Element;
 const scroller = Scroll.scroller;
@@ -14,17 +14,13 @@ class Greeting extends React.Component{
     return scroller.scrollTo('scroll-target', {smooth:true});
   }
 
+  redirectIfLoggedIn(){
+		hashHistory.push("/home");
+	}
+
 
   render(){
     let currentUser = this.props.currentUser;
-    if(currentUser){
-      return(
-        <div>
-          <h2> Hi! {currentUser.username} Click browse until I am done with this part</h2>
-        </div>
-      );
-    }
-    else{
       return(
       <div className = 'splash'>
         <div className='hero-section'>
@@ -60,6 +56,6 @@ class Greeting extends React.Component{
     );
     }
   }
-}
+
 
 export default Greeting;
