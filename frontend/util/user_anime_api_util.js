@@ -35,10 +35,10 @@ export const createUserAnime = (userAnime, success, error) => {
   });
 };
 
-export const deleteAnimeLibrary = (id, success, error) => {
+export const deleteUserAnime = (id, success, error) => {
   $.ajax({
     method: 'DELETE',
-    url: `api/anime_libraries/${id}`,
+    url: `api/user_animes/${id}`,
     success,
     error
   });

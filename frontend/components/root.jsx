@@ -33,6 +33,7 @@ const Root = ({ store }) => {
       requestAnimeLibraryIndex();
     }else if(nextState.params.animeId){
       requestSingleAnime(nextState);
+      requestAnimeLibraryIndex();
     }
   };
   return(

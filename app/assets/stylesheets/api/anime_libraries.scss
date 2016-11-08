@@ -11,14 +11,22 @@
   list-style: none;
 }
 
+.anime-library-details{
+  border-collapse: collapse;
+}
 .anime-library-details-item img{
   width:50px;
   height: 75px;
   cursor: pointer;
 }
 
+.anime-library-details-item > td{
+  font-size: 14px;
+}
+
 .library-details-title{
   cursor: pointer;
+  color: #00635d;
 }
 
 .anime-library-index{
@@ -31,4 +39,48 @@
   padding-bottom: 5px;
   border-bottom: 1px solid #bebebe;
   font-size: 20px;
+}
+
+.library-rows{
+  width:100%;
+  text-align: left;
+}
+
+
+.library-rows th{
+  border-bottom: 1px solid #bebebe;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.anime-library-details-item td{
+  vertical-align: top;
+}
+
+.library-details-title{
+  width:25%;
+}
+
+.libraries > h5{
+  font-size: 16px;
+  color: #aaa;
+}
+
+.libraries{
+  flex-direction: column;
+  display: flex;
+}
+
+
+
+.libraries > h5 >span{
+  font-size: 12px;
+  color: teal;
+  cursor:pointer;
+
+}
+
+.default-anime-libraries{
+  border-bottom: 1px solid #bebebe;
 }
