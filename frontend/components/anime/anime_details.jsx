@@ -1,9 +1,15 @@
 import React from 'react';
+import AddUserAnimeContainer from '../user_anime/add_user_anime_container';
 
 class AnimeDetails extends React.Component{
   constructor(props){
     super(props);
+    this.state={
+      addShelf:false,
+    };
   }
+
+
 
   render(){
     let anime = this.props.anime;
@@ -11,8 +17,8 @@ class AnimeDetails extends React.Component{
       <div className = "anime-details-page">
         <ul className = "anime-details">
           <div className='anime-info'>
-
           <img src={anime.image}></img>
+            <AddUserAnimeContainer animeLibrary={this.props.animeLibrary} anime={anime} currentUser={this.props.currentUser}/>
             <li><h4>Information</h4></li>
             <li><span>Type:</span> {anime.media_type}</li>
             <li><span>Episodes:</span> {anime.episodes}</li>

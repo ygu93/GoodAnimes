@@ -16,12 +16,12 @@ class AnimeLibraryDetails extends React.Component{
             <tr>
               <th>Cover</th>
               <th>Title</th>
+              <th>Type</th>
+              <th>Score</th>
               <th>Your Rating</th>
+              <th>Libraries</th>
               <th>Date Started</th>
               <th>Date Completed</th>
-              <th>Score</th>
-              <th>Type</th>
-              <th>Libraries</th>
             </tr>
         </thead>
           {animes.map((anime, idx) => <AnimeLibraryDetailsItem key={idx} anime={anime}/>)}

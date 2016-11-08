@@ -68,7 +68,7 @@ class AnimeLibraryIndex extends React.Component{
           <h2> My Animes </h2>
           <div className ="home-page">
             <div className="libraries">
-              <h4>Anime Libraries <span onClick={this.openEditForm}>(edit)</span></h4>
+              <h5>Anime Libraries <span onClick={this.openEditForm}>(edit)</span></h5>
               <ul className="default-anime-libraries">
                 {this.props.animeLibrary.slice(0,4).map((library, idx) => <li onClick={this.__handleClick.bind(this,library)} key={idx}>
                 {library.name} ({library.animes.length})</li>)}
