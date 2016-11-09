@@ -5,6 +5,7 @@ class User < ApplicationRecord
   has_many :anime_libraries
   has_many :user_animes
   has_many :animes, through: :user_animes
+  has_many :reviews
   attr_reader :password
 
   def self.find_by_credentials(username, password)
