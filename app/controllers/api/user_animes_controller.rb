@@ -30,19 +30,10 @@ class Api::UserAnimesController < ApplicationController
     render json: @user_anime
   end
 
-  private
-  def user_anime_params
-    params.require(:user_anime).permit(:user_id, :anime_library_id, :anime_id, :user_start_date, :user_end_date, :user_rating)
-  end
-
-
-
-
-
 
   private
 
   def user_anime_params
-    params.require(:user_anime).permit(:user_id, :anime_id, :anime_library_id, :user_rating, :user_start_date, :user_end_date)
+    params.require(:user_anime).permit(:user_id, :anime_id, :anime_library_id)
   end
 end
