@@ -23,10 +23,10 @@ class AnimeLibraryDetails extends React.Component{
               <th className='th-date-start'>Date Started</th>
               <th className='th-date-done'>Date Completed</th>
               <th></th>
-              <th></th>
+              {this.props.animeLibrary.name === "All" ? "" : <th></th>}
             </tr>
         </thead>
-          {animes.map((anime, idx) => <AnimeLibraryDetailsItem key={idx} anime={anime} destroyUserAnime={this.props.destroyUserAnime}/>)}
+          {animes.map((anime, idx) => <AnimeLibraryDetailsItem key={idx} anime={anime} destroyUserAnime={this.props.destroyUserAnime} lib={this.props.animeLibrary.name}/>)}
         </table>
       </div>
     );
