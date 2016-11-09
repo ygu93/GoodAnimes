@@ -14,17 +14,19 @@ class AnimeLibraryDetails extends React.Component{
         <table className= 'anime-library-details'>
           <thead className= 'library-rows'>
             <tr>
-              <th>Cover</th>
-              <th>Title</th>
-              <th>Type</th>
-              <th>Score</th>
-              <th>Your Rating</th>
-              <th>Libraries</th>
-              <th>Date Started</th>
-              <th>Date Completed</th>
+              <th className='th-cover'>Cover</th>
+              <th className='th-title'>Title</th>
+              <th className='th-type'>Type</th>
+              <th className='th-score'>Score</th>
+              <th className='th-user-rating'>Your Rating</th>
+              <th className='th-libraries'>Libraries</th>
+              <th className='th-date-start'>Date Started</th>
+              <th className='th-date-done'>Date Completed</th>
+              <th></th>
+              <th></th>
             </tr>
         </thead>
-          {animes.map((anime, idx) => <AnimeLibraryDetailsItem key={idx} anime={anime}/>)}
+          {animes.map((anime, idx) => <AnimeLibraryDetailsItem key={idx} anime={anime} destroyUserAnime={this.props.destroyUserAnime}/>)}
         </table>
       </div>
     );

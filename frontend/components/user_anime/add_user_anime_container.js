@@ -6,7 +6,8 @@ import {createUserAnime, destroyUserAnime} from '../../actions/user_anime_action
  const mapStateToProps = (state, ownProps) => ({
    currentUser: state.session.currentUser,
    animeLibrary: ownProps.animeLibrary,
-   anime: ownProps.anime
+   anime: ownProps.anime,
+   loading:state.loading
  });
 
  const mapDispatchToProps = (dispatch) => ({

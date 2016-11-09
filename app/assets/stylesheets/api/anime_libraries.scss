@@ -39,6 +39,8 @@
   padding-bottom: 5px;
   border-bottom: 1px solid #bebebe;
   font-size: 20px;
+  width: 1120px;
+  margin-left: 203px;
 }
 
 .library-rows{
@@ -51,36 +53,217 @@
   border-bottom: 1px solid #bebebe;
   font-size: 12px;
   font-weight: bold;
+  padding-bottom: 10px;
+  padding-top: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 
 .anime-library-details-item td{
   vertical-align: top;
+  border-bottom: 1px solid #bebebe;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  padding-left: 10px;
+
 }
 
 .library-details-title{
   width:25%;
 }
 
-.libraries > h5{
+.libraries > span{
   font-size: 16px;
   color: #aaa;
+  font-weight: bold;
 }
+
+.libraries > ul{
+  padding-right: 0;
+  padding-left: 0;
+  padding-top: 0;
+  padding-bottom: 10px;
+  color: #00635d;
+}
+
+.libraries li:hover {
+  text-decoration: underline;
+}
+
 
 .libraries{
   flex-direction: column;
   display: flex;
+  padding-right: 40px;
+  border-right: 1px solid #bebebe
+}
+
+.rename-cancel{
+  font-size: 12px;
+  cursor: pointer;
+  margin-left: 15px;
 }
 
 
-
-.libraries > h5 >span{
+.edit-lib{
   font-size: 12px;
   color: teal;
   cursor:pointer;
 
 }
 
+.edit-lib:hover{
+  text-decoration: underline;
+}
+
+.library-details{
+  width:900px;
+  padding-left: 20px;
+}
+
 .default-anime-libraries{
   border-bottom: 1px solid #bebebe;
+  margin-bottom: 0;
+  padding-bottom: 20px;
+  margin-top: 5px;
+}
+
+
+.default-anime-libraries > li{
+  cursor:pointer;
+}
+
+.custom-anime-libraries > li{
+  cursor: pointer;
+}
+
+.custom-anime-libraries{
+  margin-bottom: 5px;
+}
+
+.add-library{
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.add-library button{
+  background-color: #F4F1EA;
+  border-radius: 3px;
+  border: 1px solid #D6D0C4;
+  cursor:pointer;
+}
+
+
+.th-cover{
+  width:50px;
+}
+
+.th-title{
+  width:25%;
+}
+
+.th-libraries{
+  width:100px;
+}
+
+.th-date-start{
+  width:105px;
+}
+
+.th-date-done{
+  width:120px;
+}
+
+.edit-library li{
+  list-style: none;
+}
+
+.edit-library{
+  width:300px;
+  height: 300px;
+  border: 1px solid black;
+  overflow: scroll;
+}
+
+.edit-library div{
+  display: inline-block;
+}
+
+.edit-library .add-library input{
+  width: 200px;
+}
+
+.edit-library li{
+  padding: 5px;
+}
+
+.edit-lib-close{
+  float:right;
+  cursor: pointer;
+  font-size: 10px;
+}
+
+.edit-header{
+  text-align: left;
+  padding-bottom: 5px;
+  border-bottom: 1px solid #bebebe;
+  padding-left: 20px;
+}
+
+.edit-library-add{
+  margin: 0px, auto;
+}
+
+.edit-lib-lib-name{
+  font-size: 12px;
+}
+
+.rename-show{
+  cursor:pointer;
+}
+
+.edit-lib-libs{
+  border-bottom: 1px solid #d7d7d7;
+}
+
+.rename-save{
+  background-color: #F4F1EA;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 11px;
+  margin-left: 8px;
+  height: 19px;
+}
+.rename-show:hover{
+  text-decoration: underline;
+}
+
+.edit-library p{
+  margin-bottom: 0px;
+}
+
+.edit-library-add form{
+  display:inline-block;;
+  margin-left: 30px;
+}
+.rename-lib-form{
+  display:inline-block;
+}
+
+.edit-lib-del{
+  padding: 5px;
+  padding-right: 10px;
+  font-size: 12px;
+  color: red;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.lib-detail-delete{
+  font-size: 10px;
+  color: gray;
+  font-weight: bold;
+  cursor: pointer;
 }

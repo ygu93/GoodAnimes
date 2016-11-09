@@ -14,12 +14,15 @@ class EditAnimeLibraryForm extends React.Component{
   render(){
     return(
       <div className="edit-library">
-        <h6 onClick={this.props.modalClose}>Close</h6>
+        <span className='edit-lib-close'onClick={this.props.modalClose}>Close</span>
+        <br/>
+        <br/>
         <div className="edit-library-add"><AddAnimeLibraryContainer/></div>
+        <p className='edit-header'>Libraries</p>
       {this.props.animeLibrary.slice(4).map((library, idx) =>
-        <li key={idx}>
-          <span onClick={this.props.destroyAnimeLibrary.bind(this, library.id)}>X</span>
-          <RenameAnimeLibrary library={library} updateAnimeLibrary={this.props.updateAnimeLibrary}/>
+        <li key={idx} className='edit-lib-libs'>
+          <span className='edit-lib-del' onClick={this.props.destroyAnimeLibrary.bind(this, library.id)}>X</span>
+          <RenameAnimeLibrary className='lib-rename'library={library} updateAnimeLibrary={this.props.updateAnimeLibrary}/>
         </li> )}
       </div>
     );
