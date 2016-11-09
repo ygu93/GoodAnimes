@@ -3,6 +3,8 @@ import AnimeLibraryDetails from './anime_library_details';
 import AddAnimeLibraryContainer from './add_anime_library_container';
 import EditAnimeLibraryFormContainer from './edit_anime_library_form_container';
 import Modal from 'react-modal';
+import {editLibStyle} from '../session_form/auth_modal_style';
+
 
 document.addEventListener("DOMContentLoaded", function(){
   Modal.setAppElement(document);
@@ -26,17 +28,21 @@ class AnimeLibraryIndex extends React.Component{
     this.setState({editLibrary: false});
   }
 
-
-
   componentWillReceiveProps(nextProps){
+    let index = this.props.animeLibrary.indexOf(this.state.library);
     if(this.props.animeLibrary.length === 0){
       this.setState({library: nextProps.animeLibrary[0]});
     }else if(this.props.animeLibrary[1].id !== nextProps.animeLibrary[1].id){
       this.setState({library: nextProps.animeLibrary[0]});
     }else if(this.props.animeLibrary.length < nextProps.animeLibrary.length){
       this.__hideAddLibrary();
+    }else if(this.props.animeLibrary[index].animes.length !== nextProps.animeLibrary[index].animes.length){
+      this.setState({library: nextProps.animeLibrary[index]});
     }
   }
+
+
+
 
   __handleClick(library){
     this.setState({library:library});
@@ -61,6 +67,7 @@ class AnimeLibraryIndex extends React.Component{
 
 
 
+
   render(){
     return(
       <div>
@@ -68,7 +75,7 @@ class AnimeLibraryIndex extends React.Component{
           <h2> My Animes </h2>
           <div className ="home-page">
             <div className="libraries">
-              <h5>Anime Libraries <span onClick={this.openEditForm}>(edit)</span></h5>
+              <span>Anime Libraries <span className='edit-lib'onClick={this.openEditForm}>(edit)</span></span>
               <ul className="default-anime-libraries">
                 {this.props.animeLibrary.slice(0,4).map((library, idx) => <li onClick={this.__handleClick.bind(this,library)} key={idx}>
                 {library.name} ({library.animes.length})</li>)}
@@ -81,15 +88,17 @@ class AnimeLibraryIndex extends React.Component{
                 <button className='add-library-button' onClick={this.__revealAddLibrary}>Add Library</button>}
                 </div>
                 <div className='library-details'>
-                  {this.state.library ? <AnimeLibraryDetails animeLibrary={this.state.library}/> : ""}
+                  {this.state.library ? <AnimeLibraryDetails animeLibrary={this.state.library } destroyUserAnime={this.props.destroyUserAnime.bind(this)}/> : ""}
                 </div>
               </div>
             </div>
             <Modal
               isOpen={this.state.editLibrary}
-              onRequestClose={this.modalClose}>
+              onRequestClose={this.modalClose}
+              style={editLibStyle}>
               <EditAnimeLibraryFormContainer modalClose = {this.modalClose.bind(this)}/>
             </Modal>
+
           </div>
         );
       }

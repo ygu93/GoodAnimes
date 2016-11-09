@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161104002033) do
+ActiveRecord::Schema.define(version: 20161109181100) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -40,9 +40,6 @@ ActiveRecord::Schema.define(version: 20161104002033) do
     t.integer  "user_id",          null: false
     t.integer  "anime_id",         null: false
     t.integer  "anime_library_id", null: false
-    t.integer  "user_rating"
-    t.date     "user_start_date"
-    t.date     "user_end_date"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
     t.index ["anime_id"], name: "index_user_animes_on_anime_id", using: :btree

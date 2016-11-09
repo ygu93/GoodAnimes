@@ -15,14 +15,25 @@ import {fetchUserAnime,
         deleteUserAnime,
         editUserAnime} from '../util/user_anime_api_util';
 
+import {requestAllAnimeLibraries} from  '../actions/anime_library_actions';
+
 import {hashHistory} from 'react-router';
 
 const UserAnimeMiddleware = ({dispatch}) => next => action => {
   const receiveUserAnimeSuccess = (data) => {
     dispatch(receiveUserAnime(data));
+    dispatch(requestAllAnimeLibraries());
+    dispatch({
+  type: 'GROWLER__SHOW',
+  growler: {
+    text: 'Test',
+    type: 'growler--success',
+  },
+});
   };
   const deleteUserAnimeSuccess = data => {
-    dispatch(removeUserAnime(data));
+    dispatch(requestAllAnimeLibraries());
+
   };
   const errorSuccess = (xhr) => dispatch(receiveUserAnimeErrors(xhr.responseJSON));
 
@@ -37,11 +48,9 @@ const UserAnimeMiddleware = ({dispatch}) => next => action => {
       updateUserAnime(action.userAnime, receiveUserAnimeSuccess, errorSuccess);
       return next(action);
     case DESTROY_USER_ANIME:
-      deleteUserAnime(action.id, deleteUserAnimeSuccess);
+      deleteUserAnime(action.id, ()=> dispatch(requestAllAnimeLibraries()));
       return next(action);
-    case EDIT_USER_ANIME:
-      editUserAnime(action.id, receiveUserAnimeSuccess);
-      return next(action);
+
     default:
       return next(action);
   }

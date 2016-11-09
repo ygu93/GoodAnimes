@@ -5,8 +5,13 @@ class AnimeDetails extends React.Component{
   constructor(props){
     super(props);
     this.state={
-      addShelf:false,
+      dropdown:false,
     };
+    this.showDropdown = this.showDropdown.bind(this);
+  }
+
+  showDropdown(){
+    this.setState({dropdown: !this.state.dropdown});
   }
 
 
@@ -18,7 +23,11 @@ class AnimeDetails extends React.Component{
         <ul className = "anime-details">
           <div className='anime-info'>
           <img src={anime.image}></img>
-            <AddUserAnimeContainer animeLibrary={this.props.animeLibrary} anime={anime} currentUser={this.props.currentUser}/>
+          <div>
+          <div className='dropdown-container'>
+            <button className='dropdown-button' onClick={this.showDropdown}>Add to Shelves</button>
+            <div className='dropdown'>{this.state.dropdown ? <AddUserAnimeContainer animeLibrary={this.props.animeLibrary} anime={anime} currentUser={this.props.currentUser}/> : ""}</div>
+          </div>
             <li><h4>Information</h4></li>
             <li><span>Type:</span> {anime.media_type}</li>
             <li><span>Episodes:</span> {anime.episodes}</li>
@@ -27,6 +36,7 @@ class AnimeDetails extends React.Component{
             <li><span>Ended On:</span> {anime.end_date}</li>
             <li><span>Score:</span> {anime.score}</li>
             </div>
+          </div>
           <div className='anime-desc-right'>
           <li className='anime-title'><h3>{anime.title}</h3></li>
           <h4 className='synopsis'>Synopsis</h4>

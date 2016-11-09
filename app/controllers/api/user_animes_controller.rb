@@ -27,7 +27,7 @@ class Api::UserAnimesController < ApplicationController
   def destroy
     @user_anime = UserAnime.find_by_id(params[:id])
     @user_anime.destroy
-    render json: @anime_library
+    render json: @user_anime
   end
 
   private

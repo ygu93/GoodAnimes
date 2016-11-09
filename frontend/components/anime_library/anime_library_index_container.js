@@ -2,6 +2,7 @@ import {connect} from 'react-redux';
 import AnimeLibraryIndex from './anime_library_index';
 import {requestAnimeLibrary, destroyAnimeLibrary, updateAnimeLibrary} from '../../actions/anime_library_actions';
 import {selectAllAnimeLibrary} from '../../reducers/selector';
+import {destroyUserAnime} from '../../actions/user_anime_actions';
 
  const mapStateToProps = state => ({
    currentUser: state.session.currentUser,
@@ -11,7 +12,8 @@ import {selectAllAnimeLibrary} from '../../reducers/selector';
  const mapDispatchToProps = (dispatch) => ({
    requestAnimeLibrary: (id) => dispatch(requestAnimeLibrary(id)),
    destroyAnimeLibrary: (id) => dispatch(destroyAnimeLibrary(id)),
-   updateAnimeLibrary: (animeLibrary) => dispatch(updateAnimeLibrary(animeLibrary))
+   updateAnimeLibrary: (animeLibrary) => dispatch(updateAnimeLibrary(animeLibrary)),
+   destroyUserAnime: (id) => dispatch(destroyUserAnime(id))
 
  });
 

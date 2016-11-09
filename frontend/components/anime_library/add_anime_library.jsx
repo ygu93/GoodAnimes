@@ -23,11 +23,10 @@ class AddAnimeLibrary extends React.Component{
   }
   render(){
     return(
-      <div className='AddLibrary'>
-        <h6>Add a Library:</h6>
-        <form onSubmit={this.handleSubmit}>
+      <div className='add-library'>
+        <form className='add-lib-form' onSubmit={this.handleSubmit}>
           <label htmlFor="library-name"></label>
-          <input type='text' name='anime_library[name]' onChange={this.updateForm("name")} id="library-name"></input>
+          <input type='text' name='anime_library[name]' onChange={this.updateForm("name")} id="library-name" placeholder="Add a Library"></input>
           <button>add</button>
         </form>
       </div>

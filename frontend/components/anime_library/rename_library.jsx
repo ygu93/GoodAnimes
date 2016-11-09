@@ -32,14 +32,14 @@ class RenameAnimeLibrary extends React.Component{
     let library = this.props.library;
     return(
       this.state.rename ?
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className='rename-lib-form'>
         <label>
         <input type="text" value={this.state.name} name='anime_library[name]'onChange={this.updateForm("name")}></input>
         </label>
-          <button>Save</button>
-          <span onClick={this.showRename}>Cancel</span>
+          <button className='rename-save'>Save</button>
+          <span onClick={this.showRename} className='rename-cancel'>Cancel</span>
       </form>
-      :<div>{library.name} ({library.animes.length}) <span onClick={this.showRename}>rename</span></div>
+      :<div className='edit-lib-lib-name'>{library.name} ({library.animes.length}) <span className='rename-show' onClick={this.showRename}>rename</span></div>
     );
   }
 }
