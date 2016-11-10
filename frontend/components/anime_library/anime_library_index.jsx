@@ -64,7 +64,7 @@ class AnimeLibraryIndex extends React.Component{
     this.setState({editLibrary: true});
   }
 
-
+  // className={library === this.state.library ? selected : ""}
 
 
 

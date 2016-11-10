@@ -54,6 +54,12 @@ def anime_seed
 end
 anime_seed
 User.create({username:"Guest", password:"password"})
+User.create({username:"Rem", password:"password"})
+User.create({username:"Elric7", password:"password"})
+User.create({username:"kurigohan", password:"password"})
+User.create({username:"kamehameha", password:"password"})
+User.create({username:"superhacker", password:"password"})
+User.create({username:"Elucidator", password:"password"})
 AnimeLibrary.create({user_id:1, name:"Watched"})
 AnimeLibrary.create({user_id:1, name:"Currently Watching"})
 AnimeLibrary.create({user_id:1, name:"Plan to Watch"})

@@ -27,7 +27,7 @@ class AnimeLibraryDetailsItem extends React.Component{
           <td className='lib-detail-startdate'>{anime.user_start_date ? anime.user_start_date : "Not Set"}</td>
           <td className='lib-detail-enddate'>{anime.user_end_date ? anime.user_end_date : "Not Set"}</td>
           <td>edit</td>
-          {this.props.lib==="All" ? "" : <td onClick={this.props.destroyUserAnime.bind(this, anime.user_anime_id)} className='lib-detail-delete'>X</td>}
+          {this.props.lib==="All" ? <td></td>: <td onClick={this.props.destroyUserAnime.bind(this, anime.user_anime_id)} className='lib-detail-delete'>X</td>}
         </tr>
       </tbody>
 

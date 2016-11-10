@@ -7,5 +7,6 @@ Rails.application.routes.draw do
     resources :animes, only: [:index, :show, :create]
     resources :anime_libraries, except: [:new]
     resources :user_animes, except: [:new]
+    resources :reviews, except: [:new, :index]
   end
 end
