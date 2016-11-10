@@ -15,7 +15,7 @@ const AnimeLibraryReducer = (state={}, action) => {
     case RECEIVE_ANIME_LIBRARY:
       return merge({}, state, action.animeLibrary);
     case REMOVE_ANIME_LIBRARY:
-      delete dup[action.id];
+      delete dup[action.id.id];
       return dup;
     case RECEIVE_ANIME_LIBRARY_ERRORS:
       dup["errors"]  = action.errors;

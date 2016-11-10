@@ -21,4 +21,4 @@ json.reviews @anime.reviews do |review|
                         :user
                         json.created_at review.created_at.to_date
                       end
-json.currentUserReview @anime.reviews.select {|review| review.user_id == current_user.id}
+json.currentUserReview (@anime.reviews.select {|review| review.user_id == current_user.id})[0]

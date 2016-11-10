@@ -2,6 +2,7 @@ import React from 'react';
 import AddUserAnimeContainer from '../user_anime/add_user_anime_container';
 import ReviewIndexContainer from '../review/review_index_container';
 import NewReviewFormContainer from '../review/new_review_form_container';
+import UserReviewDetails from '../review/user_review_details';
 
 class AnimeDetails extends React.Component{
   constructor(props){
@@ -15,8 +16,6 @@ class AnimeDetails extends React.Component{
   showDropdown(){
     this.setState({dropdown: !this.state.dropdown});
   }
-
-
 
   render(){
     let anime = this.props.anime;
@@ -45,9 +44,11 @@ class AnimeDetails extends React.Component{
           <li dangerouslySetInnerHTML={{__html:anime.synopsis}}></li>
           </div>
         </ul>
+        {anime.currentUserReview ? <div className='user-review-details'><UserReviewDetails anime={this.props.anime} review={anime.currentUserReview} /> </div>:
         <div className='new-review-form'>
           <NewReviewFormContainer animeId={this.props.anime.id}/>
-        </div>
+        </div>}
+
 
         <div className='review-index-container'>
           <ReviewIndexContainer reviews={anime.reviews}/>

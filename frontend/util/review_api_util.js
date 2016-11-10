@@ -43,10 +43,10 @@ export const createReview = (review, success, error) => {
   });
 };
 
-export const deleteReview = (id, success, error) => {
+export const deleteReview = (review, success, error) => {
   $.ajax({
     method: 'DELETE',
-    url: `api/reviews/${id}`,
+    url: `api/reviews/${review.id}`,
     success,
     error
   });

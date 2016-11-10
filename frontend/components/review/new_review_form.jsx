@@ -45,9 +45,9 @@ class NewReviewForm extends React.Component{
               {scores.map((score, idx)=> <option key={idx} value={score}>{score}</option>)}
             </select>
             <br/>
-            <span>Date I Started this anime:</span><input type='date' onChange={this.updateForm("user_start_date")}/>
+            <span>Date I Started this anime:</span><input type='date' onInput={this.updateForm("user_start_date")}/>
             <br/>
-            <span>Date I finished this anime:</span> <input type='date'onChange={this.updateForm("user_end_date")}/>
+            <span>Date I finished this anime:</span> <input type='date'onInput={this.updateForm("user_end_date")}/>
             <br/>
             <span>What did you think?</span>
             <br/>

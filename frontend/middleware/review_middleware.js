@@ -22,8 +22,7 @@ import {requestAnime} from '../actions/anime_actions';
 
 const ReviewMiddleware = ({dispatch}) => next => action => {
   const receiveReviewSuccess = (data) => {
-    dispatch(receiveReview(data));
-    dispatch(requestAnime(data.id));
+    dispatch(requestAnime(data.anime_id));
   };
   const receiveAllReviewsSuccess = data => dispatch(receiveAllReviews(data));
   const deleteReviewSuccess = data => {
@@ -42,10 +41,10 @@ const ReviewMiddleware = ({dispatch}) => next => action => {
       fetchReview(action.id, receiveReviewSuccess);
       return next(action);
     case UPDATE_REVIEW:
-      updateReview(action.Review, receiveReviewSuccess, errorSuccess);
+      updateReview(action.review, receiveReviewSuccess, errorSuccess);
       return next(action);
     case DESTROY_REVIEW:
-      deleteReview(action.id, deleteReviewSuccess);
+      deleteReview(action.review, deleteReviewSuccess);
       return next(action);
     case CREATE_REVIEW:
       createReview(action.review, createReviewSuccess, errorSuccess);
