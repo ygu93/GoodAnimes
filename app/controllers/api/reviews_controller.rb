@@ -40,7 +40,7 @@ class Api::ReviewsController < ApplicationController
 
   private
   def review_params
-    params.require(:review).permit(:anime_id, :user_id, :user_rating, :user_start_date, :user_end_date)
+    params.require(:review).permit(:anime_id, :user_id, :user_rating, :user_start_date, :user_end_date, :body)
   end
 
 

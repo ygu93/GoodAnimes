@@ -33,7 +33,6 @@ export const updateReview = (review, success, error) => {
 };
 
 export const createReview = (review, success, error) => {
-  debugger
   $.ajax({
     method: 'POST',
     dataType:'json',

@@ -9,6 +9,7 @@
         json.type user_anime.anime.media_type
         json.anime_id user_anime.anime.id
         json.libraries user_anime.anime.anime_libraries.select{|library| library.user_id == current_user.id}.map{|lib| lib.name}
+        json.currentUserReview user_anime.anime.reviews.select {|review| review.user_id == current_user.id}
       end
   end
   json.set! library.id do
@@ -22,6 +23,7 @@
       json.type user_anime.anime.media_type
       json.anime_id user_anime.anime_id
       json.libraries user_anime.anime.anime_libraries.select{|library| library.user_id == current_user.id}.map{|lib| lib.name}
+      json.currentUserReview user_anime.anime.reviews.select {|review| review.user_id == current_user.id}
     end)
   end
 

@@ -17,10 +17,13 @@ import {fetchReview,
         deleteReview,
         editReview} from '../util/review_api_util.js';
 
+import {requestAnime} from '../actions/anime_actions';
+
 
 const ReviewMiddleware = ({dispatch}) => next => action => {
   const receiveReviewSuccess = (data) => {
     dispatch(receiveReview(data));
+    dispatch(requestAnime(data.id));
   };
   const receiveAllReviewsSuccess = data => dispatch(receiveAllReviews(data));
   const deleteReviewSuccess = data => {
@@ -28,7 +31,7 @@ const ReviewMiddleware = ({dispatch}) => next => action => {
   };
   const errorSuccess = (xhr) => dispatch(receiveReviewErrors(xhr.responseJSON));
   const createReviewSuccess = data => {
-    dispatch(receiveReview(data));
+    dispatch(requestAnime(data.anime_id));
   };
 
   switch(action.type){

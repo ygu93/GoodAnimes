@@ -45,7 +45,7 @@ class AnimeDetails extends React.Component{
           <li dangerouslySetInnerHTML={{__html:anime.synopsis}}></li>
           </div>
         </ul>
-        <div>
+        <div className='new-review-form'>
           <NewReviewFormContainer animeId={this.props.anime.id}/>
         </div>
 
