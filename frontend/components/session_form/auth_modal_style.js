@@ -35,7 +35,7 @@ export const editLibStyle ={
  content : {
    position        : 'fixed',
    top             : '80px',
-   width           : '320px',
+   width           : '360px',
    height          : '305px',
    borderRadius    : '0px',
    padding         : 0,
