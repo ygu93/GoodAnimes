@@ -54,7 +54,7 @@ class SessionForm extends React.Component{
           <br/>
           <button>Submit</button>
           <ul className='errors'>
-            {this.props.errors.map((error,idx) => <li key={idx}>{error}</li>)}
+            {this.props.errors ? this.props.errors.map((error,idx) => <li key={idx}>{error}</li>) : ""}
           </ul>
         </form>
       </div>
