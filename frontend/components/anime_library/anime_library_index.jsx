@@ -64,8 +64,6 @@ class AnimeLibraryIndex extends React.Component{
     this.setState({editLibrary: true});
   }
 
-  // className={library === this.state.library ? selected : ""}
-
 
 
   render(){
@@ -77,11 +75,11 @@ class AnimeLibraryIndex extends React.Component{
             <div className="libraries">
               <span>Anime Libraries <span className='edit-lib'onClick={this.openEditForm}>(edit)</span></span>
               <ul className="default-anime-libraries">
-                {this.props.animeLibrary.slice(0,4).map((library, idx) => <li onClick={this.__handleClick.bind(this,library)} key={idx}>
+                {this.props.animeLibrary.slice(0,4).map((library, idx) => <li className={library === this.state.library ? "selected-lib" : ""} onClick={this.__handleClick.bind(this,library)} key={idx}>
                 {library.name} ({library.animes.length})</li>)}
               </ul>
               <ul className="custom-anime-libraries">
-                {this.props.animeLibrary.slice(4).map((library, idx) => <li onClick={this.__handleClick.bind(this,library)} key={idx}>
+                {this.props.animeLibrary.slice(4).map((library, idx) => <li className={library === this.state.library ? "selected-lib" : ""} onClick={this.__handleClick.bind(this,library)} key={idx}>
                 {library.name} ({library.animes.length})</li>)}
               </ul>
               {this.state.addLibrary ? <AddAnimeLibraryContainer/> :
