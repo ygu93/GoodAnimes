@@ -4,7 +4,7 @@ import {createReview} from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
-  anime: state.anime
+  animeId: ownProps.animeId
 });
 
 const mapDispatchToProps = (dispatch) => ({

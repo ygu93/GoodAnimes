@@ -8,10 +8,16 @@ class NewReviewForm extends React.Component{
       user_end_date: "",
       user_rating: "",
       body: "",
-      anime_id:""
+      anime_id:this.props.animeId
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateForm = this.updateForm.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps){
+    if(nextProps.animeId){
+      this.setState({anime_id:nextProps.animeId});
+    }
   }
 
   updateForm(label){
@@ -20,7 +26,6 @@ class NewReviewForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.setState({["anime_id"]:this.props.animeId});
     this.props.createReview(this.state);
   }
 
@@ -35,9 +40,9 @@ class NewReviewForm extends React.Component{
           <h6>Add a review</h6>
           <form onSubmit={this.handleSubmit}>
             <span> My Rating</span>
-            <select>
+            <select onChange={this.updateForm("user_rating")}>
               <option></option>
-              {scores.map((score, idx)=> <option key={idx} value={score} onChange={this.updateForm("user_rating")}>{score}</option>)}
+              {scores.map((score, idx)=> <option key={idx} value={score}>{score}</option>)}
             </select>
             <br/>
             <span>Date I Started this anime:</span><input type='date' onChange={this.updateForm("user_start_date")}/>
