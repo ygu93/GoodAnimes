@@ -21,17 +21,16 @@ import {fetchAnimeLibrary,
 import {hashHistory} from 'react-router';
 
 const AnimeLibraryMiddleware = ({dispatch}) => next => action => {
-  const receiveAnimeLibrarySuccess = () => {
-    dispatch(requestAllAnimeLibraries());
+  const receiveAnimeLibrarySuccess = (data) => {
+    dispatch(receiveAnimeLibrary(data));
   };
   const receiveAllAnimeLibrariesSuccess = data => dispatch(receiveAllAnimeLibraries(data));
   const deleteAnimeLibrarySuccess = data => {
     dispatch(removeAnimeLibrary(data));
-    dispatch(requestAllAnimeLibraries());
   };
   const errorSuccess = (xhr) => alert(xhr.responseJSON);
   const createAnimeLibrarySuccess = data => {
-    dispatch(requestAllAnimeLibraries());
+    dispatch(receiveAnimeLibrary(data));
   };
 
   switch(action.type){
@@ -49,9 +48,6 @@ const AnimeLibraryMiddleware = ({dispatch}) => next => action => {
       return next(action);
     case CREATE_ANIME_LIBRARY:
       createAnimeLibrary(action.animeLibrary, createAnimeLibrarySuccess, errorSuccess);
-      return next(action);
-    case EDIT_ANIME_LIBRARIES:
-      editAnimeLibraries(receiveAllAnimeLibrariesSuccess);
       return next(action);
     default:
       return next(action);

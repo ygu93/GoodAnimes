@@ -15,7 +15,7 @@ const ReviewReducer = (state={}, action) => {
     case RECEIVE_REVIEW:
       return merge({}, state, action.review);
     case REMOVE_REVIEW:
-      delete dup[action.review.id];
+      delete dup[action.id];
       return dup;
     case RECEIVE_REVIEW_ERRORS:
       dup["errors"]  = action.errors;

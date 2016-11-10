@@ -11,7 +11,7 @@ class AnimeIndex extends React.Component{
     <div className ="browse-page">
       <h2>Check out some of the top Animes</h2>
       <ul className ="anime-index">
-      {this.props.animes.map((anime, idx) => <AnimeIndexItem key={idx} anime={anime}/>)}
+      {this.props.animes.slice(0,56).map((anime, idx) => <AnimeIndexItem key={idx} anime={anime}/>)}
       </ul>
     </div>
     );

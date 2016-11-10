@@ -4,11 +4,13 @@ class Api::AnimeLibrariesController < ApplicationController
     @anime_libraries = current_user.anime_libraries
     @all_animes = current_user.user_animes
     @all_animes = @all_animes.select {|useranime| useranime.anime_id}.uniq {|anim| anim.anime_id}
+    render "api/anime_libraries/index"
   end
 
   def create
     @anime_library = AnimeLibrary.new(anime_library_params)
     if @anime_library.save
+      render "api/anime_libraries/show"
     else
       render json: @anime_library.errors.full_messages, status:422
     end
@@ -16,6 +18,7 @@ class Api::AnimeLibrariesController < ApplicationController
 
   def show
     @anime_library = AnimeLibrary.find_by_id(params[:id])
+    render "api/anime_libraries/show"
   end
 
   def edit
@@ -25,7 +28,7 @@ class Api::AnimeLibrariesController < ApplicationController
   def update
     @anime_library = AnimeLibrary.find_by_id(params[:id])
     if @anime_library.update(anime_library_params)
-      render json: @anime_library
+      render "api/anime_libraries/show"
     else
       render json: @anime_library.errors.full_messages, status:422
     end

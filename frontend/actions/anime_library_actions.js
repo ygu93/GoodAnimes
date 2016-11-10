@@ -38,10 +38,6 @@ export const destroyAnimeLibrary = (id) => ({
   id
 });
 
-export const editAnimeLibraries = (id) => ({
-  type:EDIT_ANIME_LIBRARIES,
-  id
-});
 
 export const removeAnimeLibrary = (id) => ({
   type: REMOVE_ANIME_LIBRARY,

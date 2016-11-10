@@ -33,9 +33,9 @@ export const updateReview = (review) => ({
   review
 });
 
-export const destroyReview = (id) => ({
+export const destroyReview = (review) => ({
   type:DESTROY_REVIEW,
-  id
+  review
 });
 
 export const editReview = (id) => ({

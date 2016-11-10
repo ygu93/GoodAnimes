@@ -9,18 +9,12 @@ import {requestAllAnimes, requestAnime} from '../actions/anime_actions';
 import {requestAllAnimeLibraries, requestAnimeLibrary} from '../actions/anime_library_actions';
 import AnimeDetailsContainer from './anime/anime_details_container';
 import AnimeLibraryIndexContainer from './anime_library/anime_library_index_container';
-import EditUserAnimeFormContainer from './user_anime/edit_user_anime_form_container';
-import {editUserAnime} from "../actions/user_anime_actions";
 
 
 const Root = ({ store }) => {
   const requestAnimeIndex = () => store.dispatch(requestAllAnimes());
   const requestSingleAnime = (nextState) => {
     return store.dispatch(requestAnime(nextState.params.animeId));
-  };
-
-  const requestEditUserAnime =(nextState) => {
-    return store.dispatch(editUserAnime(nextState.params.userAnimeId));
   };
 
   const requestAnimeLibraryIndex = () => store.dispatch(requestAllAnimeLibraries());
