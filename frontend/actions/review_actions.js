@@ -10,6 +10,9 @@ export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const EDIT_REVIEW = 'EDIT_REVIEW';
 export const DESTROY_LIB_REVIEW = 'DESTROY_LIB_REVIEW';
 export const REMOVE_LIB_REVIEW = 'REMOVE_LIB_REVIEW';
+export const RECEIVE_LIB_REVIEW = 'RECEIVE_LIB_REVIEW';
+export const CREATE_LIB_REVIEW = 'CREATE_LIB_REVIEW';
+export const UPDATE_LIB_REVIEW = 'UPDATE_LIB_REVIEW';
 
 export const requestAllReviews = () =>({
   type: REQUEST_ALL_REVIEWS
@@ -32,6 +35,11 @@ export const receiveReview = (review) => ({
 
 export const updateReview = (review) => ({
   type: UPDATE_REVIEW,
+  review
+});
+
+export const updateLibReview = (review) => ({
+  type: UPDATE_LIB_REVIEW,
   review
 });
 
@@ -60,8 +68,18 @@ export const removeLibReview = (review) => ({
   review
 });
 
+export const receiveLibReview = (review) => ({
+  type: RECEIVE_LIB_REVIEW,
+  review
+});
+
 export const createReview = (review) => ({
   type: CREATE_REVIEW,
+  review
+});
+
+export const createLibReview = (review) => ({
+  type: CREATE_LIB_REVIEW,
   review
 });
 

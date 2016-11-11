@@ -8,6 +8,12 @@ const LoadingReducer = (state = false, action) => {
     }
   else if(action.type.includes("RECEIVE")){
     return false;
+  }else if(action.type.includes("DESTROY")){
+    return true;
+  }else if(action.type.includes("CREATE")){
+    return true;
+  }else if(action.type.includes("REMOVE")){
+    return false;
   }else{
     return state;
   }

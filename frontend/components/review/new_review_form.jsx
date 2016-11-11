@@ -26,7 +26,11 @@ class NewReviewForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state);
+    if(this.props.location ==="library"){
+      this.props.createLibReview(this.state);
+    }else{
+      this.props.createReview(this.state);
+    }
     this.props.closeNewReview();
   }
 

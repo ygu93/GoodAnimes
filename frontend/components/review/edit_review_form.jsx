@@ -32,14 +32,26 @@ class EditReviewForm extends React.Component{
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateReview({
-      user_start_date: this.state.user_start_date,
-      user_end_date: this.state.user_end_date,
-      user_rating: this.state.user_rating,
-      body: this.state.body,
-      anime_id: this.props.review.anime_id,
-      id: this.props.review.id
-    });
+    if(this.props.location ==='library'){
+      this.props.updateLibReview({
+        user_start_date: this.state.user_start_date,
+        user_end_date: this.state.user_end_date,
+        user_rating: this.state.user_rating,
+        body: this.state.body,
+        anime_id: this.props.review.anime_id,
+        id: this.props.review.id
+      });
+    }else{
+      this.props.updateReview({
+        user_start_date: this.state.user_start_date,
+        user_end_date: this.state.user_end_date,
+        user_rating: this.state.user_rating,
+        body: this.state.body,
+        anime_id: this.props.review.anime_id,
+        id: this.props.review.id
+      });
+    }
+
     this.props.closeEditReview();
   }
 

@@ -1,6 +1,6 @@
 import {connect} from 'react-redux';
 import NewReviewForm from './new_review_form';
-import {createReview} from '../../actions/review_actions';
+import {createReview, createLibReview} from '../../actions/review_actions';
 
 const mapStateToProps = (state, ownProps) => ({
   currentUser: state.session.currentUser,
@@ -8,7 +8,8 @@ const mapStateToProps = (state, ownProps) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    createReview: (review) => dispatch(createReview(review))
+    createReview: (review) => dispatch(createReview(review)),
+    createLibReview: (review) => dispatch(createLibReview(review))
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(NewReviewForm);

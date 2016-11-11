@@ -18,6 +18,7 @@ import {fetchAnimeLibrary,
         deleteAnimeLibrary,
         editAnimeLibraries} from '../util/anime_library_util.js';
 
+
 import {hashHistory} from 'react-router';
 
 const AnimeLibraryMiddleware = ({dispatch}) => next => action => {

@@ -76,7 +76,7 @@ class AnimeLibraryDetailsItem extends React.Component{
             onRequestClose={this.closeNewReview}
             style={newReviewStyle}>
             <NewReviewFormContainer animeId={this.props.anime.id} closeNewReview={this.closeNewReview.bind(this)}
-              image={this.props.anime.image} title={this.props.anime.title}/>
+              image={this.props.anime.image} title={this.props.anime.title} location="library"/>
           </Modal>
         </td>
           {this.props.lib==="All" ? <td></td>: <td onClick={this.props.destroyUserAnime.bind(this, anime.user_anime_id)} className='lib-detail-delete'>X</td>}

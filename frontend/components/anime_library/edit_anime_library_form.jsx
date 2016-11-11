@@ -19,11 +19,13 @@ class EditAnimeLibraryForm extends React.Component{
         <br/>
         <div className="edit-library-add"><AddAnimeLibraryContainer/></div>
         <p className='edit-header'>Libraries</p>
+        <ul className='edit-lib-container'>
       {this.props.animeLibrary.slice(4).map((library, idx) =>
         <li key={idx} className='edit-lib-libs'>
           <span className='edit-lib-del' onClick={this.props.destroyAnimeLibrary.bind(this, library.id)}>X</span>
           <RenameAnimeLibrary className='lib-rename'library={library} updateAnimeLibrary={this.props.updateAnimeLibrary}/>
         </li> )}
+        </ul>
       </div>
     );
   }

@@ -5,11 +5,14 @@ import {REQUEST_ALL_REVIEWS,
         CREATE_REVIEW,
         EDIT_REVIEW,
         DESTROY_LIB_REVIEW,
+        CREATE_LIB_REVIEW,
+        UPDATE_LIB_REVIEW,
         receiveReview,
         receiveAllReviews,
         removeReview,
         receiveReviewErrors,
-        removeLibReview}
+        removeLibReview,
+        receiveLibReview}
         from  '../actions/review_actions';
 
 import {fetchReview,
@@ -39,10 +42,11 @@ const ReviewMiddleware = ({dispatch}) => next => action => {
     dispatch(removeLibReview(data));
   };
 
+  const receiveLibReviewSuccess = data => {
+    dispatch(receiveLibReview(data));
+  };
+
   switch(action.type){
-    case REQUEST_ALL_REVIEWS:
-      fetchAllReviews(receiveAllReviewsSuccess);
-      return next(action);
     case REQUEST_REVIEW:
       fetchReview(action.id, receiveReviewSuccess);
       return next(action);
@@ -60,6 +64,13 @@ const ReviewMiddleware = ({dispatch}) => next => action => {
       return next(action);
     case DESTROY_LIB_REVIEW:
       deleteReview(action.review, deleteLibReviewSuccess);
+      return next(action);
+    case CREATE_LIB_REVIEW:
+      createReview(action.review, receiveLibReviewSuccess);
+      return next(action);
+    case UPDATE_LIB_REVIEW:
+      updateReview(action.review, receiveLibReviewSuccess);
+      return next(action);
     default:
       return next(action);
   }
