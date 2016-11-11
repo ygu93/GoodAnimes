@@ -10,8 +10,11 @@ class ReviewIndexItem extends React.Component{
     let review = this.props.review;
     return(
       <li className='review-index-item'>
-        {review.user_rating ? <span>{review.user.username} rated this a {review.user_rating}</span> : <span>{review.user.username}</span>}
-        <span>{review.created_at}</span>
+        <div className='review-item-header'>
+        {review.user_rating ? <span className='review-username'>{review.user.username}'s<span className='review-index-rating'> overall rating: {review.user_rating}</span></span>
+        : <span className='review-username'>{review.user.username}</span>}
+        <span className="review-date">{review.created_at}</span>
+      </div>
         <p>{review.body}</p>
       </li>
     );

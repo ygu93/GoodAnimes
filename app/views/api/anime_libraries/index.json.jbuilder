@@ -2,6 +2,7 @@
   json.set! 0 do
     json.name "All"
     json.animes @all_animes.each do |user_anime|
+        json.id user_anime.anime.id
         json.user_anime_id user_anime.id
         json.title user_anime.anime.title
         json.image user_anime.anime.image
@@ -16,6 +17,7 @@
     json.id library.id
     json.name library.name
     json.animes library.user_animes do |user_anime|
+      json.id user_anime.anime.id
       json.user_anime_id user_anime.id
       json.title user_anime.anime.title
       json.image user_anime.anime.image

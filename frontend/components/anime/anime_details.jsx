@@ -3,18 +3,32 @@ import AddUserAnimeContainer from '../user_anime/add_user_anime_container';
 import ReviewIndexContainer from '../review/review_index_container';
 import NewReviewFormContainer from '../review/new_review_form_container';
 import UserReviewDetails from '../review/user_review_details';
+import {newReviewStyle} from '../session_form/auth_modal_style';
+import Modal from 'react-modal';
 
 class AnimeDetails extends React.Component{
   constructor(props){
     super(props);
     this.state={
       dropdown:false,
+      editReview:false,
+      newReview:false
     };
     this.showDropdown = this.showDropdown.bind(this);
+    this.showNewReview = this.showNewReview.bind(this);
+    this.closeNewReview = this.closeNewReview.bind(this);
   }
 
   showDropdown(){
     this.setState({dropdown: !this.state.dropdown});
+  }
+
+  showNewReview(){
+    this.setState({newReview: true});
+  }
+
+  closeNewReview(){
+    this.setState({newReview: false});
   }
 
   render(){
@@ -44,15 +58,30 @@ class AnimeDetails extends React.Component{
           <li dangerouslySetInnerHTML={{__html:anime.synopsis}}></li>
           </div>
         </ul>
+        <div className='your-review'>
         {anime.currentUserReview ? <div className='user-review-details'><UserReviewDetails anime={this.props.anime} review={anime.currentUserReview} /> </div>:
-        <div className='new-review-form'>
-          <NewReviewFormContainer animeId={this.props.anime.id}/>
-        </div>}
+        <div>
+        <h6 className='my-review my-rev-alt'>MY REVIEW </h6>
+        <span className='add-a-rev-link'onClick={this.showNewReview}>Add a Review</span>
+        </div>
+        }
+        </div>
 
 
         <div className='review-index-container'>
           <ReviewIndexContainer reviews={anime.reviews}/>
         </div>
+
+        <Modal
+          isOpen={this.state.newReview}
+          onRequestClose={this.closeNewReview}
+          style={newReviewStyle}>
+          <NewReviewFormContainer
+            animeId={this.props.anime.id}
+            title={this.props.anime.title}
+            image={this.props.anime.image}
+            closeNewReview={this.closeNewReview.bind(this)}/>
+        </Modal>
       </div>
     );
   }

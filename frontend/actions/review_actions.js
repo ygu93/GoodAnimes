@@ -8,6 +8,8 @@ export const REMOVE_REVIEW = 'REMOVE_REVIEW';
 export const CREATE_REVIEW = 'CREATE_REVIEW';
 export const RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
 export const EDIT_REVIEW = 'EDIT_REVIEW';
+export const DESTROY_LIB_REVIEW = 'DESTROY_LIB_REVIEW';
+export const REMOVE_LIB_REVIEW = 'REMOVE_LIB_REVIEW';
 
 export const requestAllReviews = () =>({
   type: REQUEST_ALL_REVIEWS
@@ -38,6 +40,11 @@ export const destroyReview = (review) => ({
   review
 });
 
+export const destroyLibReview = (review) => ({
+  type:DESTROY_LIB_REVIEW,
+  review
+});
+
 export const editReview = (id) => ({
   type:EDIT_REVIEW,
   id
@@ -45,6 +52,11 @@ export const editReview = (id) => ({
 
 export const removeReview = (review) => ({
   type: REMOVE_REVIEW,
+  review
+});
+
+export const removeLibReview = (review) => ({
+  type: REMOVE_LIB_REVIEW,
   review
 });
 

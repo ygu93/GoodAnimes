@@ -29,8 +29,8 @@
   border: 1px solid black;
   text-align: center;
   padding-top: 10px;
-  margin-bottom: 20px;
-  margin-left: 20px;
+  margin-bottom: 30px;
+  margin-left: 30px;
   box-shadow: 15px 15px 5px 0px rgba(0,0,0,0.75);
 }
 
@@ -38,6 +38,7 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  padding: 0 10px;
 }
 
 .browse-page >h2 {

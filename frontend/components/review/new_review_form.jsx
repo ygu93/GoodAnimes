@@ -27,6 +27,7 @@ class NewReviewForm extends React.Component{
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview(this.state);
+    this.props.closeNewReview();
   }
 
 
@@ -36,25 +37,36 @@ class NewReviewForm extends React.Component{
 
     return(
       <div className='new-review-container'>
-        <div>
-          <h6>Add a review</h6>
-          <form onSubmit={this.handleSubmit}>
-            <span> My Rating</span>
-            <select onChange={this.updateForm("user_rating")}>
-              <option></option>
-              {scores.map((score, idx)=> <option key={idx} value={score}>{score}</option>)}
-            </select>
-            <br/>
-            <span>Date I Started this anime:</span><input type='date' onInput={this.updateForm("user_start_date")}/>
-            <br/>
-            <span>Date I finished this anime:</span> <input type='date'onInput={this.updateForm("user_end_date")}/>
-            <br/>
-            <span>What did you think?</span>
-            <br/>
-            <textarea onChange={this.updateForm("body")} placeholder="Add your review" rows="10" cols="50"></textarea>
-            <br/>
-            <button>Save</button>
-          </form>
+        <span className='new-rev-close' onClick={this.props.closeNewReview}>x</span>
+        <div className='new-review-form'>
+          <div>
+          <img src={this.props.image}/>
+          </div>
+          <div>
+            <h6>Add a review of </h6>
+            <h5>{this.props.title}</h5>
+            <form onSubmit={this.handleSubmit}>
+              <span className='new-rev-field-rating'> My Rating:</span>
+              <select onChange={this.updateForm("user_rating")}>
+                <option></option>
+                {scores.map((score, idx)=> <option key={idx} value={score}>{score}</option>)}
+              </select>
+              <br/>
+              <br/>
+              <span className='new-rev-field-date-start'>Date I Started this anime:</span><input type='date' onInput={this.updateForm("user_start_date")}/>
+              <br/>
+              <br/>
+              <div className='new-rev-field-date-end'>
+              <span>Date I finished this anime:</span><input type='date'onInput={this.updateForm("user_end_date")}/>
+              </div>
+              <br/>
+              <p className='new-rev-body-head'>What did you think?</p>
+              <br/>
+              <textarea className='new-rev-body'onChange={this.updateForm("body")} placeholder="Add your review" rows="15" cols="100"></textarea>
+              <br/>
+              <button className='new-rev-save'>Save</button>
+            </form>
+          </div>
         </div>
       </div>
     );

@@ -4,10 +4,12 @@ import {REQUEST_ALL_REVIEWS,
         DESTROY_REVIEW,
         CREATE_REVIEW,
         EDIT_REVIEW,
+        DESTROY_LIB_REVIEW,
         receiveReview,
         receiveAllReviews,
         removeReview,
-        receiveReviewErrors,}
+        receiveReviewErrors,
+        removeLibReview}
         from  '../actions/review_actions';
 
 import {fetchReview,
@@ -22,7 +24,7 @@ import {requestAnime} from '../actions/anime_actions';
 
 const ReviewMiddleware = ({dispatch}) => next => action => {
   const receiveReviewSuccess = (data) => {
-    dispatch(requestAnime(data.anime_id));
+    dispatch(receiveReview(data));
   };
   const receiveAllReviewsSuccess = data => dispatch(receiveAllReviews(data));
   const deleteReviewSuccess = data => {
@@ -30,7 +32,11 @@ const ReviewMiddleware = ({dispatch}) => next => action => {
   };
   const errorSuccess = (xhr) => dispatch(receiveReviewErrors(xhr.responseJSON));
   const createReviewSuccess = data => {
-    dispatch(requestAnime(data.anime_id));
+    dispatch(receiveReview(data));
+  };
+
+  const deleteLibReviewSuccess = data => {
+    dispatch(removeLibReview(data));
   };
 
   switch(action.type){
@@ -52,6 +58,8 @@ const ReviewMiddleware = ({dispatch}) => next => action => {
     case EDIT_REVIEW:
       editReview(action.id, receiveReviewSuccess);
       return next(action);
+    case DESTROY_LIB_REVIEW:
+      deleteReview(action.review, deleteLibReviewSuccess);
     default:
       return next(action);
   }

@@ -2,11 +2,212 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .review-index-container{
-  width:1100px;
-  margin-left:560px;
+  width:45%;
+  margin: 10px auto;
+  margin-top: 30px;
 }
 
 .new-review-form{
   margin: 0 auto;
   width: 500px;
+}
+
+.your-review{
+  width: 45%;
+  margin: 0 auto;
+  margin-top: 70px;
+}
+
+.user-review-details-header{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 5px;
+}
+
+.user-review-edit{
+  color:#767676;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.user-review-edit:hover{
+  text-decoration: underline;
+}
+
+.user-review-body{
+  margin-top: 10px;
+}
+
+.user-review-body > li{
+  font-size: 15px;
+  color: #382110;
+  font-weight: bold;
+}
+
+.user-review-body > li > span{
+  color: black;
+  margin-left: 5px;
+}
+
+.my-review{
+  font-size: 14px;
+  font-weight: bold;
+  color: #382110;
+}
+
+.all-reviews-container > h2{
+  font-size: 14px;
+  color: #382110;
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 8px;
+}
+
+.review-username{
+  color: #00635d;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.review-index-item{
+  padding-left: 0;
+  text-align: left;
+}
+
+.review-index-item p{
+  padding: 7px 0;
+}
+
+.review-index{
+  padding-left: 0
+}
+.review-index-rating{
+  font-weight: bold;
+  color: black;
+}
+
+.review-item-header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.review-date{
+  color:#bbbbbb;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.new-review-form{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding-left: 0px;
+}
+
+.new-review-form img{
+  width:75px;
+  padding-right: 25px;
+  margin-top: 20px;
+}
+
+.new-review-form h6{
+  font-size: 12px;
+  margin-bottom: 5px;
+  margin-top: 16px;
+}
+
+.new-review-form h5{
+  color: #333333;
+  margin-top: 0px;
+  font-weight: bold;
+  font-size: 16px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #d8d8d8;
+  margin-bottom: 10px;
+}
+
+.new-review-container{
+  width:900px;
+  min-height: 500px;
+}
+
+.new-rev-field-rating{
+  padding-right: 10px;
+
+}
+
+.new-rev-field-date-start{
+  padding-right: 11px;
+}
+
+.new-rev-field-date-end > span{
+  padding-right: 8px;
+}
+
+.new-rev-body-head{
+  border-top: 1px solid #d8d8d8;
+  padding-top: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.new-rev-body{
+  border: 1px solid #DCD6CC;
+  border-radius: 5px;
+  width:100%;
+  height: auto;
+}
+
+.my-rev-alt{
+  border-bottom: 1px solid #d8d8d8;
+  padding-bottom: 5px;
+  margin-bottom: 5px;
+}
+.new-rev-save{
+  margin-top: 15px;
+  font-size: 14px;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  background-color: #F4F1EA;
+  padding: 8px 12px;
+}
+
+.add-a-rev-link{
+  cursor: pointer;
+  margin: 0px;
+}
+
+.add-a-rev-link:hover{
+  text-decoration: underline;
+}
+
+.new-rev-close{
+  float:right;
+  cursor: pointer;
+  color: gray;
+  font-weight: bold;
+}
+
+.rev-edit-new{
+  cursor: pointer;
+}
+
+.rev-edit-new:hover{
+  text-decoration: underline;
+}
+
+.edit-del-rev{
+  text-align: right;
+}
+
+.edit-del-rev span{
+  color: #aaaaaa;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 15px;
+  padding-bottom: 20px;
+}
+
+.edit-del-rev span:hover{
+  text-decoration: underline;
 }
