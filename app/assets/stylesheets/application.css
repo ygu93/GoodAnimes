@@ -347,7 +347,7 @@
 }
 
 .seq-preloader {
-  background: rgb(255,255,255,0.7);
+  background: rgba(255,255,255,0.7);
   visibility: visible;
   opacity: 1;
   position: absolute;
