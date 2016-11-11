@@ -12,10 +12,22 @@ class EditReviewForm extends React.Component{
     };
     this.handleSubmit = this.handleSubmit.bind(this);
     this.updateForm = this.updateForm.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
   }
 
   updateForm(label){
     return e => this.setState({[label]: e.target.value});
+  }
+
+  handleDelete(e){
+    e.preventDefault();
+    if(this.props.location ==='library'){
+      this.props.destroyLibReview(this.props.review);
+      this.props.closeEditReview();
+    }else{
+      this.props.destroyReview(this.props.review);
+      this.props.closeEditReview();
+    }
   }
 
   handleSubmit(e) {
@@ -37,33 +49,44 @@ class EditReviewForm extends React.Component{
     let scores =[10,9,8,7,6,5,4,3,2,1];
 
     return(
-      <div className='edit-useranime-container'>
-        <h6 onClick={this.props.closeEditReview}>X</h6>
-        <div>
-          <img src={this.props.anime.image}></img>
-        </div>
-        <div>
-          <span>Your review of {this.props.anime.title}</span>
-          <form onSubmit={this.handleSubmit}>
-            <span>Your Rating</span>
-            <select onChange={this.updateForm("user_rating")} defaultValue={review.user_rating}>
-              {scores.map((score, idx) =>
-                <option key={idx} value={score}>{score}</option>)}
-            </select>
-            <br/>
-            <span>Date Started:</span><input type='date'
-              defaultValue={review.user_start_date ? review.user_start_date : ""}
-              onInput={this.updateForm("user_start_date")}/>
-            <br/>
-            <span>Date Ended:</span> <input type='date'
-              defaultValue={review.user_end_date ? review.user_end_date : ""} onInput={this.updateForm("user_end_date")}/>
-            <br/>
-            <span>What did you think?</span>
-            <textarea onChange={this.updateForm("body")} defaultValue={review.body}></textarea>
-            <button>Save</button>
-          </form>
-          <span onClick={this.props.destroyReview.bind(this, this.props.review)}>Delete review</span>
-        </div>
+      <div className='new-review-container'>
+        <span className='new-rev-close' onClick={this.props.closeEditReview}>X</span>
+        <div className='new-review-form'>
+          <div>
+            <img src={this.props.anime.image}></img>
+          </div>
+          <div>
+            <h6>Your review of </h6>
+            <h5>{this.props.anime.title}</h5>
+            <form onSubmit={this.handleSubmit}>
+              <span className='new-rev-field-rating'>My Rating</span>
+              <select onChange={this.updateForm("user_rating")} defaultValue={review.user_rating}>
+                {scores.map((score, idx) =>
+                  <option key={idx} value={score}>{score}</option>)}
+              </select>
+              <br/>
+              <br/>
+              <span className='new-rev-field-date-start'>Date I Started this anime:</span><input type='date'
+                defaultValue={review.user_start_date ? review.user_start_date : ""}
+                onInput={this.updateForm("user_start_date")}/>
+              <br/>
+              <br/>
+              <div className='new-rev-field-date-end'>
+              <span>Date I finished this anime:</span> <input type='date'
+                defaultValue={review.user_end_date ? review.user_end_date : ""} onInput={this.updateForm("user_end_date")}/>
+              </div>
+              <br/>
+              <p className='new-rev-body-head'>What did you think?</p>
+              <br/>
+              <textarea className='new-rev-body' onChange={this.updateForm("body")} defaultValue={review.body} rows="15" cols="100"></textarea>
+              <br/>
+              <button className='new-rev-save'>Save</button>
+            </form>
+            <footer className='edit-del-rev'>
+            <span onClick={this.handleDelete}>Delete review</span>
+            </footer>
+          </div>
+          </div>
       </div>
     );
   }

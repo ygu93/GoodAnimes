@@ -36,6 +36,10 @@ class AnimeLibraryIndex extends React.Component{
       this.setState({library: nextProps.animeLibrary[0]});
     }else if(this.props.animeLibrary.length < nextProps.animeLibrary.length){
       this.__hideAddLibrary();
+    }else if(this.props.animeLibrary.length > nextProps.animeLibrary.length){
+      this.setState({library: nextProps.animeLibrary[0]});
+    }else{
+      this.setState({library: nextProps.animeLibrary[index]});
     }
   }
 

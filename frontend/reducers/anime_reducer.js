@@ -17,7 +17,9 @@ const AnimeReducer = (state={}, action) => {
       dup.currentUserReview = null;
       return dup;
     case RECEIVE_REVIEW:
-      return merge({}, state, action.review);
+      dup.currentUserReview = action.review;
+      dup.reviews.push(action.review);
+      return dup;
     default:
       return state;
   }
