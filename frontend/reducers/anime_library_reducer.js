@@ -3,8 +3,8 @@ import {RECEIVE_ALL_ANIME_LIBRARIES,
         REMOVE_ANIME_LIBRARY,
         RECEIVE_ANIME_LIBRARY_ERRORS} from '../actions/anime_library_actions';
 import merge from 'lodash/merge';
-import {REMOVE_LIB_REVIEW, RECEIVE_REVIEW} from '../actions/review_actions';
-
+import {REMOVE_LIB_REVIEW, RECEIVE_LIB_REVIEW} from '../actions/review_actions';
+import {RECEIVE_USER_ANIME, REMOVE_USER_ANIME} from '../actions/user_anime_actions';
 
 
 const AnimeLibraryReducer = (state={}, action) => {
@@ -21,7 +21,7 @@ const AnimeLibraryReducer = (state={}, action) => {
     case RECEIVE_ANIME_LIBRARY_ERRORS:
       dup["errors"]  = action.errors;
       return dup;
-    case RECEIVE_REVIEW:
+    case RECEIVE_LIB_REVIEW:
       let keys = Object.keys(dup);
       let i = 0;
       while (i < keys.length) {
@@ -48,6 +48,10 @@ const AnimeLibraryReducer = (state={}, action) => {
         }
         j +=1;
       }
+      return dup;
+    case RECEIVE_USER_ANIME:
+      let libIdsToChange = Object.keys(dup).filter((key) => action.userAnime.libraries.includes(dup[key].name));
+      libIdsToChange.forEach((id) => dup[id].animes.push(action.userAnime));
       return dup;
     default:
       return state;

@@ -195,6 +195,7 @@
   width:350px;
   height: 300px;
   border: 1px solid black;
+  border-radius: 5px;
   overflow: scroll;
 }
 
@@ -221,10 +222,24 @@
   padding-bottom: 5px;
   border-bottom: 1px solid #bebebe;
   padding-left: 20px;
+  border-bottom: 2px solid #EBE8D5;
+}
+
+.edit-lib-container{
+  padding: 0;
 }
 
 .edit-library-add{
   margin: 0px, auto;
+}
+
+.edit-library-add input{
+  padding: 8px 12px;
+}
+
+.edit-library-add button{
+  padding: 8px 12px;
+  margin-left: 8px;
 }
 
 .edit-lib-lib-name{
@@ -277,4 +292,21 @@
   color: gray;
   font-weight: bold;
   cursor: pointer;
+}
+
+.no-ani-lib{
+  text-align: center;
+  color: #aaaaaa;
+  padding: 20px;
+  padding-top: 50px;
+  font-size: 20px;
+}
+
+.no-ani-lib > a{
+  text-decoration: none;
+  color: #aaaaaa;
+}
+
+.no-ani-lib > a:hover{
+  text-decoration: underline;
 }

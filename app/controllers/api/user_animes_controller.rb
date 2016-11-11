@@ -2,7 +2,7 @@ class Api::UserAnimesController < ApplicationController
   def create
     @user_anime = UserAnime.new(user_anime_params)
     if @user_anime.save
-      render :show
+      render 'api/user_animes/show'
     else
       render json: @user_anime.errors.full_messages, status:422
     end
@@ -27,7 +27,7 @@ class Api::UserAnimesController < ApplicationController
   def destroy
     @user_anime = UserAnime.find_by_id(params[:id])
     @user_anime.destroy
-    render json: @user_anime
+    render 'api/user_animes/show'
   end
 
 

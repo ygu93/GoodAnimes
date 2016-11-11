@@ -1,5 +1,6 @@
 import React from 'react';
 import AnimeLibraryDetailsItem from './anime_library_details_item';
+import { Link } from 'react-router';
 
 class AnimeLibraryDetails extends React.Component{
   constructor(props){
@@ -24,11 +25,16 @@ class AnimeLibraryDetails extends React.Component{
               <th className='th-date-done'>Date Completed</th>
               <th>Review</th>
               <th></th>
+              <th></th>
+              <th></th>
             </tr>
         </thead>
-          {animes.map((anime, idx) => <AnimeLibraryDetailsItem key={idx} anime={anime} destroyUserAnime={this.props.destroyUserAnime} lib={this.props.animeLibrary.name}/>)}
+          {animes.length > 0 ?
+            animes.map((anime, idx) =>
+            <AnimeLibraryDetailsItem key={idx} anime={anime} destroyUserAnime={this.props.destroyUserAnime} lib={this.props.animeLibrary.name}/>)
+              : <tbody></tbody>}
         </table>
-
+        {animes.length == 0 ? <div className='no-ani-lib'><Link to='/animes'>No Animes in this library. Click here to get Started!</Link></div> : "" }
       </div>
     );
   }

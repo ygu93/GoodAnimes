@@ -22,14 +22,6 @@ import {hashHistory} from 'react-router';
 const UserAnimeMiddleware = ({dispatch}) => next => action => {
   const receiveUserAnimeSuccess = (data) => {
     dispatch(receiveUserAnime(data));
-    dispatch(requestAllAnimeLibraries());
-    dispatch({
-  type: 'GROWLER__SHOW',
-  growler: {
-    text: 'Test',
-    type: 'growler--success',
-  },
-});
   };
   const deleteUserAnimeSuccess = data => {
     dispatch(requestAllAnimeLibraries());
@@ -48,7 +40,7 @@ const UserAnimeMiddleware = ({dispatch}) => next => action => {
       updateUserAnime(action.userAnime, receiveUserAnimeSuccess, errorSuccess);
       return next(action);
     case DESTROY_USER_ANIME:
-      deleteUserAnime(action.id, ()=> dispatch(requestAllAnimeLibraries()));
+      deleteUserAnime(action.id, (data)=> dispatch(removeUserAnime(data)));
       return next(action);
 
     default:
