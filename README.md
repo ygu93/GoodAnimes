@@ -11,31 +11,12 @@ Goodanimes gets its anime seed data via myanimelist's API, it make several searc
 
 Goodanimes uses the React Router to keep all of its content on a single root page. While navigating the site, such as user data, anime, and reviews are all managed in a local store. It gets this information from the backend rails API, which serves data in json format using jbuilder. To further condense the number of routes in the react router, the site uses modals for several of its features. These include the login form and the create/edit  review form.
 
+<img src='./readme-images/modal.png'/>
 
 ###View all your libraries
 You can view all the animes you've added to your libraries via the library index. The relevant information is fetched for you in the backend by filtering the libraries to the current user's using active record. Then jbuilder is used to feed the relevant information with active record relationships. Each library object contains its anime objects and such and no additional information needs to be retrieved from the front end. An artificial all library is also generated to show the unique animes in the users library.
 
-```ruby
-
-{
-"0": {
-"name": "All",
-"animes": [
-{
-"id": 37,
-"user_anime_id": 1,
-"title": "Toaru Kagaku no Railgun",
-"image": "https://myanimelist.cdn-dena.com/images/anime/8/53581.jpg",
-"score": 7.87,
-"type": "TV",
-"anime_id": 37,
-"libraries": [
-"Watched"
-],
-"currentUserReview": null
-},
-{
-```
+<img src='./readme-images/libindex.png'/>
 
 ### Add reviews to animes
 Reviews can be added to animes by two different places, the anime show page and the library index. These are accomplished via modals. Reviews are retrieved by both the anime and the library using the backend. Then custom actions in redux are created to either update the library's state or the anime page's state based on the location prop that is passed to the container. Like the library all the data is called from just the anime show controller.
