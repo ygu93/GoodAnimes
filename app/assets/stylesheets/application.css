@@ -13,6 +13,10 @@
  *= require_tree .
  *= require_self
  */
+ *{
+   font-family: Helvetica, sans-serif;
+ }
+
 
  nav {
    height:56px;
@@ -156,15 +160,60 @@
 
  .descr{
    display: flex;
-   justify-content: space-around;;
+   justify-content: center;
+   flex-wrap: wrap;
+   text-align: center;
 
  }
 
  .descr > p{
-   width: 200px;
+   width: 100%;
+   font-size: 20px;
+   font-weight: bold;
+   color: #707070;
+   font-family: Helvetica;
+   padding-top: 30px;
+ }
+
+ .descr img{
+   max-width: 70%;
+   padding-top: 50px;
+ }
+
+ .blurb2{
+   background-color: white;
+ }
+
+ .blurb4{
+   background-color: white;
+   text-align: center;
+   padding-bottom: 50px;
  }
 
 
+ .blurb4 span{
+   color: #484848;
+   font-weight: bold;
+   display: block;
+ }
+
+ .blurb4 button{
+   padding: 10px 20px;
+   border: 1px solid #BABABA;
+   color: black;
+   margin-right: 10px;
+   cursor: pointer;
+   font-size: 16px;
+   border-radius: 3px;
+ }
+
+ .blurb4-1{
+   font-size: 30px;
+ }
+
+ .blurb4-2{
+   font-size: 20px;
+ }
  .welcome{
    text-align: center;
  }
