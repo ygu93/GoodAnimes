@@ -68,15 +68,18 @@ class Greeting extends React.Component{
           <p className='blurb1'>
             When watching anime, finding the right anime to watch is half the battle. With goodanimes, you can always find the right
             anime for you.
+            <br/>
             <img src="https://s3.amazonaws.com/goodanimesvideos/anime-index.png"/>
           </p>
 
           <p className='blurb2'>
             Browse an anime's detail page to read a detailed synopsis, and read what others think about the show.
+            <br/>
             <img src="https://s3.amazonaws.com/goodanimesvideos/anime-details.png"/>
           </p>
           <p className='blurb3'>
             Build your collection by keeping track of all your shows in custom libraries.
+            <br/>
             <img src="https://s3.amazonaws.com/goodanimesvideos/libindex.png"/>
           </p>
 
