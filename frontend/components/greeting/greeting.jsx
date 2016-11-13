@@ -3,11 +3,31 @@ import {Link, hashHistory} from 'react-router';
 import Scroll from 'react-scroll';
 const Element = Scroll.Element;
 const scroller = Scroll.scroller;
+import Modal from 'react-modal';
+import SessionFormContainer from '../session_form/session_form_container';
+import {authModalStyle} from '../session_form/auth_modal_style';
 
+document.addEventListener("DOMContentLoaded", function(){
+  Modal.setAppElement(document);
+});
 
 class Greeting extends React.Component{
   constructor(props){
     super(props);
+    this.state = {
+      auth: false,
+    };
+    this.signupClick = this.signupClick.bind(this);
+    this.modalClose = this.modalClose.bind(this);
+    this.guestLogin = this.guestLogin.bind(this);
+  }
+
+  signupClick(){
+    this.setState({auth: true});
+  }
+
+  modalClose(){
+    this.setState({auth: false});
   }
 
   scrollToDesc(){
@@ -17,6 +37,12 @@ class Greeting extends React.Component{
   redirectIfLoggedIn(){
 		hashHistory.push("/home");
 	}
+
+  guestLogin(e){
+    e.preventDefault();
+    const guest = {username:"Guest", password:"password"};
+    this.props.login(guest);
+  }
 
 
   render(){
@@ -39,19 +65,36 @@ class Greeting extends React.Component{
       <div className='about'>
         <h2 className ='welcome'>Meeting your next favorite Anime</h2>
         <section className = 'descr'>
-          <p>
+          <p className='blurb1'>
             When watching anime, finding the right anime to watch is half the battle. With goodanimes, you can always find the right
             anime for you.
+            <img src="https://s3.amazonaws.com/goodanimesvideos/anime-index.png"/>
           </p>
 
-          <p>
-            Browse an anime's detail page to read a detailed synopsis, see the average rating and read reviews on the show.
+          <p className='blurb2'>
+            Browse an anime's detail page to read a detailed synopsis, and read what others think about the show.
+            <img src="https://s3.amazonaws.com/goodanimesvideos/anime-details.png"/>
           </p>
-          <p>
-            Build your collection by keeping track of all your shows in custom libraries
+          <p className='blurb3'>
+            Build your collection by keeping track of all your shows in custom libraries.
+            <img src="https://s3.amazonaws.com/goodanimesvideos/libindex.png"/>
+          </p>
+
+          <p className='blurb4'>
+            <span className='blurb4-1'>Interested?</span>
+              <span className='blurb4-2'>Sign up today!</span>
+              <br/>
+            <button onClick={this.signupClick}> Sign Up</button>
+            <button onClick={this.guestLogin}> Login as Guest</button>
           </p>
         </section>
       </div>
+      <Modal
+        isOpen={this.state.auth}
+        onRequestClose={this.modalClose}
+        style={authModalStyle}>
+        <SessionFormContainer formType='signup' modalClose = {this.modalClose.bind(this)}/>
+      </Modal>
     </div>
     );
     }
