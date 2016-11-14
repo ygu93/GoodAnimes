@@ -69,7 +69,7 @@ class Greeting extends React.Component{
             When watching anime, finding the right anime to watch is half the battle. With goodanimes, you can always find the right
             anime for you.
             <br/>
-            <img src="https://s3.amazonaws.com/goodanimesvideos/anime-index.png"/>
+            <img src="https://s3.amazonaws.com/goodanimesvideos/rsz_anime-index.jpg"/>
           </p>
 
           <p className='blurb2'>
