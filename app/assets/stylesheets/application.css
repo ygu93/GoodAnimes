@@ -92,6 +92,15 @@
    margin-top: 70px;
  }
 
+ .clickable{
+   cursor: pointer;
+ }
+
+ .blurb-button:hover{
+   background-color: 	#A9A9A9;
+   color: white;
+ }
+
  .intro{
    position: absolute;
    margin: 0 auto;

@@ -92,7 +92,7 @@ class EditReviewForm extends React.Component{
               <br/>
               <textarea className='new-rev-body' onChange={this.updateForm("body")} defaultValue={review.body} rows="15" cols="100"></textarea>
               <br/>
-              <button className='new-rev-save'>Save</button>
+              <button className='new-rev-save clickable'>Save</button>
             </form>
             <footer className='edit-del-rev'>
             <span onClick={this.handleDelete}>Delete review</span>

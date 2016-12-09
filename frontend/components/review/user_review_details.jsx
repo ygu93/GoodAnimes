@@ -28,7 +28,7 @@ class UserReviewDetails extends React.Component{
     <div>
     <div className='user-review-details-header'>
       <span className='my-review'>MY REVIEW</span>
-       <span className='user-review-edit'onClick={this.showEditReview}>Edit</span>
+       <img className='user-review-edit'onClick={this.showEditReview} src='https://s3.amazonaws.com/goodanimesvideos/edit.png'></img>
     </div>
       <div className='user-review-body'>
         <li>Rating:    <span>{review.user_rating ? review.user_rating : "Not Set"}</span></li>

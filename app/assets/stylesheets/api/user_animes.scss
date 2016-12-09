@@ -16,6 +16,16 @@
 
 .dropdown-button{
   width: 225px;
+  background-color: #409D69;
+  color: white;
+  border-radius: 5px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  outline: none;
+}
+
+.dropdown-button:hover{
+  background-color: #265e3f;
 }
 
 .add-user-anime{

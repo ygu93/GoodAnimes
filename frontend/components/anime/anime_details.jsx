@@ -17,10 +17,15 @@ class AnimeDetails extends React.Component{
     this.showDropdown = this.showDropdown.bind(this);
     this.showNewReview = this.showNewReview.bind(this);
     this.closeNewReview = this.closeNewReview.bind(this);
+    this.closeDropdown = this.closeDropdown.bind(this);
   }
 
   showDropdown(){
-    this.setState({dropdown: !this.state.dropdown});
+    this.setState({dropdown: true});
+  }
+
+  closeDropdown(){
+    this.setState({dropdown: false});
   }
 
   showNewReview(){
@@ -39,8 +44,8 @@ class AnimeDetails extends React.Component{
           <div className='anime-info'>
           <img src={anime.image}></img>
           <div>
-          <div className='dropdown-container'>
-            <button className='dropdown-button' onClick={this.showDropdown}>Add to Shelves</button>
+          <div className='dropdown-container' onMouseLeave={this.closeDropdown}>
+            <button className='dropdown-button clickable' onMouseOver={this.showDropdown}>Add to Libraries</button>
             <div className='dropdown'>{this.state.dropdown ? <AddUserAnimeContainer animeLibrary={this.props.animeLibrary} anime={anime} currentUser={this.props.currentUser}/> : ""}</div>
           </div>
             <li><h4>Information</h4></li>
@@ -61,7 +66,7 @@ class AnimeDetails extends React.Component{
         <div className='your-review'>
         {anime.currentUserReview ? <div className='user-review-details'><UserReviewDetails anime={this.props.anime} review={anime.currentUserReview} /> </div>:
         <div>
-        <h6 className='my-review my-rev-alt'>MY REVIEW </h6>
+        <h6 className='my-review my-rev-alt'>MY REVIEW <img className='add-rev-button clickable' onClick={this.showNewReview}src='https://s3.amazonaws.com/goodanimesvideos/092024-glossy-black-icon-signs-first-aid.png'></img></h6>
         <span className='add-a-rev-link'onClick={this.showNewReview}>Add a Review</span>
         </div>
         }

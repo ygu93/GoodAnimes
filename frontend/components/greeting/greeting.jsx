@@ -87,8 +87,8 @@ class Greeting extends React.Component{
             <span className='blurb4-1'>Interested?</span>
               <span className='blurb4-2'>Sign up today!</span>
               <br/>
-            <button onClick={this.signupClick}> Sign Up</button>
-            <button onClick={this.guestLogin}> Login as Guest</button>
+            <button onClick={this.signupClick} className='blurb-button'> Sign Up</button>
+            <button onClick={this.guestLogin} className='blurb-button'> Login as Guest</button>
           </p>
         </section>
       </div>
