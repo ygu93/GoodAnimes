@@ -11,7 +11,8 @@ const AnimeReducer = (state={}, action) => {
     case RECEIVE_ALL_ANIMES:
       return action.animes;
     case RECEIVE_ANIME:
-      return merge({}, state, action.anime);
+      // return merge({}, state, action.anime);
+      return action.anime;
     case REMOVE_REVIEW:
       let index = dup.reviews.indexOf(dup.reviews.filter((rev)=> rev.id === action.review.id)[0]);
       delete dup.reviews[index];

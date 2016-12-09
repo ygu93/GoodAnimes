@@ -71,9 +71,9 @@ class AddUserAnime extends React.Component{
       <div className="add-user-anime">
         {loading}
         <form>
-            {libraries.slice(1,4).map((library, idx) => <label key={idx}><input key={idx} name="default libraries" type="radio"
+            {libraries.slice(1,4).map((library, idx) => <label className = 'clickable' key={idx}><input key={idx} name="default libraries" type="radio"
               defaultChecked={anime.libraries ? anime.libraries.includes(library.name) : false} value={library.id} onChange={this.__handleRadio}/> {library.name}</label>)}
-            {libraries.slice(4).map((library, idx) => <label key={idx}><input key={idx} type="checkbox" value={library.id}
+            {libraries.slice(4).map((library, idx) => <label className='clickable' key={idx}><input key={idx} type="checkbox" value={library.id}
               defaultChecked={anime.libraries ? anime.libraries.includes(library.name) : false} onChange={this.__handleCheck}/>{library.name} </label>)}
         </form>
       </div>
