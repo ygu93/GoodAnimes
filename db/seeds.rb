@@ -44,6 +44,8 @@ def anime_seed
         elsif param == "synopsis" && result[param]!= nil
           anime_params["synopsis"] = result[param].gsub("[i]", "")
           anime_params["synopsis"] = anime_params["synopsis"].gsub("[/i]", "")
+          anime_params["synopsis"] = result[param].gsub("[b]", "")
+          anime_params["synopsis"] = anime_params["synopsis"].gsub("[/b]", "")
         else
           anime_params[param] = result[param]
         end
@@ -201,3 +203,52 @@ Review.create({user_id:2, anime_id:133 ,   body:"After watching all the FMP seas
 "})
 Review.create({user_id:2, anime_id:41 ,user_rating:8,   body:"While the second installment of the Railgun series picks up almost directly after the conclusion of the first series, A Certain Scientific Railgun S goes for a different kind of approach thematically and in terms of emotional appeal. Overall, there is a larger focus on the troubles of Misaka Mikoto herself. S1 gave a pretty even amount of screen time to all four of our main characters, so she was not put entirely into the spotlight before, but now she leads this show head on following the events that take place during the sisters arc."})
 Review.create({user_id:2, anime_id:100 ,user_rating:6,   body:"I'm not a huge fan of the moe wave, if you want to call it, that has over-saturated the anime market for good part of the last five years. Personally, I don't really wish to encourage a lack of creativity in Japanese studios to continue with the on-going cute girls going cute things mentality, but I have to admit as much as I' might dislike or completely forgo these moe series, something about K-ON!! (and its prequel) keep me entertained."})
+Review.create({user_id:3, anime_id:34 ,user_rating:9, user_start_date:, user_end_date:, body:"Magic, pure magic. Everything that is wrong with Nagisa is right with Tomoyo.
+
+Premise:
+Filial piety is restored, and the father receives his child back into his arms by Tomoyo's grace. All mighty, all holy, all loving Tomoyo. None shall come before the father except by her.
+
+Basically, its the Tomoyo/Canon ending for Clannad
+
+Conclusion:
+IN one stroke, we fix everything that was wrong with Clannad's ending and avoid the unmitigated catastrophe that was Clannad Afterstory. If that's not worth a ten, I don't know what is. If you're already watching Clannad, watch this, be momentarily happy, and then take the dive and watch Afterstory."})
+Review.create({user_id:3, anime_id:139 ,user_rating:8, user_start_date:, user_end_date:, body:"Fullmetal Alchemist is a mega success, specially the Brotherhood anime. Proof of that is the fact that it's ranked number 2 in this page, since who knows how many months. And, as with any successful product, OVA, specials and movies are created. Unfortunately, in most cases, these products tend to be mediocre at best, therefore, prudent consumers often face these creations with skepticism, or directly not expecting much. So, i watched Brotherhood's special with the intention of having fun, but not expecting anything great or mind blowing. I mean, four fifteen minutes long self conclusive episodes? What could you get of that?. A lot. This is one of the few cases in wich the product took me by surprise."})
+Review.create({user_id:3, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:3, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:3, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:4, anime_id:34 ,user_rating:9, user_start_date:, user_end_date:, body:"This one episode Clannad OVA is to me one that is filled with emotions. Aside from that, it manages to do three things to the Clannad series: One, it provides the romance that was mostly minimal in Clannad. Two, it provides the drama that gradually fell from the plot after Fuko and and Kotomi's arc. And three, it allows satisfaction to Tomoyo supporters, since not everyone was a Nagisa fan. Many people expected Clannad to be a series with significant romantic struggles and a high level of drama, but it instead turned into a slice-of-life comedy after the first one or two arcs."})
+Review.create({user_id:4, anime_id:139 ,user_rating:8, user_start_date:, user_end_date:, body:"The Blind Alchemist is about Ed and Al hearing a rumor that a state alchemist named Judas successfully made a human transmutation to save her daughter from dying and what they see is rather disturbing. The Blind Alchemist showcases more on the consequences of human transmutation and how can affect on people's lives. It's been done in other FMA episodes, but this OVA is still emotionally heartbreaking and a nice start to the OVA Collection."})
+Review.create({user_id:4, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:4, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:4, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:4, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:5, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:5, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:5, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:5, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:5, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:6, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:6, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:6, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:6, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:7, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:7, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:7, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:7, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:8, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:8, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:8, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:8, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:9, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:9, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:9, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:9, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:10, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:10, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:10, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:10, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:10, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:11, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:11, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:11, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:11, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
