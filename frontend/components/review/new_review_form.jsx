@@ -66,7 +66,7 @@ class NewReviewForm extends React.Component{
               <br/>
               <p className='new-rev-body-head'>What did you think?</p>
               <br/>
-              <textarea className='new-rev-body'onChange={this.updateForm("body")} placeholder="Add your review" rows="15" cols="100"></textarea>
+              <textarea className='new-rev-body'onChange={this.updateForm("body")} placeholder="Enter your review" rows="15" cols="100"></textarea>
               <br/>
               <button className='new-rev-save clickable'>Save</button>
             </form>
