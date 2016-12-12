@@ -161,6 +161,43 @@
   cursor:pointer;
 }
 
+.add-lib-form button:hover{
+  background-color: #dbd8d2;
+}
+
+.add-lib-form button{
+  padding: 4px 12px;
+  margin-left: 5px;
+}
+
+.libraries input{
+  width: 100px;
+  border-radius: 3px;
+  color: #333333;
+  border: 1px solid #dcd6cc;
+  height: 20px;
+}
+
+
+.lib-index-add-lib input{
+  width: 100px;
+}
+
+.add-library button:hover{
+  background-color: #dbd8d2;
+}
+
+.add-library-button:hover{
+  background-color: #dbd8d2;
+}
+
+.add-library-button{
+  background-color: #F4F1EA;
+  border: 1px solid #D6D0C4;
+  border-radius: 3px;
+  color: #333333;
+}
+
 
 .th-cover{
   width:50px;
@@ -257,10 +294,15 @@
 .rename-save{
   background-color: #F4F1EA;
   border-radius: 3px;
+  border: 1px solid #D6D0C4;
+  padding: 4px 12px;
   cursor: pointer;
   font-size: 11px;
   margin-left: 8px;
-  height: 19px;
+}
+
+.rename-save:hover{
+  background-color: #dbd8d2;
 }
 .rename-show:hover{
   text-decoration: underline;

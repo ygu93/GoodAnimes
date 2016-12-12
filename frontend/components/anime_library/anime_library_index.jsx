@@ -103,7 +103,7 @@ class AnimeLibraryIndex extends React.Component{
                 {library.name} ({library.animes ? library.animes.length: 0})</li>)}
               </ul>
               {this.state.addLibrary ? <AddAnimeLibraryContainer/> :
-                <button className='add-library-button' onClick={this.__revealAddLibrary}>Add Library</button>}
+                <button className='add-library-button clickable' onClick={this.__revealAddLibrary}>Add Library</button>}
                 </div>
                 <div className='library-details'>
                   {this.state.library ? <AnimeLibraryDetails animeLibrary={this.state.library } destroyUserAnime={this.props.destroyUserAnime.bind(this)}/> : ""}
