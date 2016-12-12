@@ -72,12 +72,12 @@ AnimeLibrary.create({user_id:1, name:"Plan to Watch"})
 AnimeLibrary.create({user_id:1, name:"Action"})
 AnimeLibrary.create({user_id:1, name:"Drama"})
 AnimeLibrary.create({user_id:1, name:"Favorites"})
-UserAnime.create({user_id:1, anime_id:37, anime_library_id:1})
-UserAnime.create({user_id:1, anime_id:123, anime_library_id:1})
-UserAnime.create({user_id:1, anime_id:134, anime_library_id:1})
-UserAnime.create({user_id:1, anime_id:85, anime_library_id:2})
-UserAnime.create({user_id:1, anime_id:73, anime_library_id:2})
-UserAnime.create({user_id:1, anime_id:115, anime_library_id:3})
+UserAnime.create({user_id:1, anime_id:38, anime_library_id:1})
+UserAnime.create({user_id:1, anime_id:126, anime_library_id:1})
+UserAnime.create({user_id:1, anime_id:105, anime_library_id:1})
+UserAnime.create({user_id:1, anime_id:87, anime_library_id:2})
+UserAnime.create({user_id:1, anime_id:74, anime_library_id:2})
+UserAnime.create({user_id:1, anime_id:114, anime_library_id:3})
 UserAnime.create({user_id:1, anime_id:104, anime_library_id:3})
 UserAnime.create({user_id:1, anime_id:47, anime_library_id:4})
 UserAnime.create({user_id:1, anime_id:66, anime_library_id:4})
@@ -85,13 +85,13 @@ UserAnime.create({user_id:1, anime_id:30, anime_library_id:5})
 UserAnime.create({user_id:1, anime_id:93, anime_library_id:5})
 UserAnime.create({user_id:1, anime_id:28, anime_library_id:6})
 UserAnime.create({user_id:1, anime_id:6, anime_library_id:6})
-UserAnime.create({user_id:1, anime_id:111, anime_library_id:2})
+UserAnime.create({user_id:1, anime_id:114, anime_library_id:2})
 UserAnime.create({user_id:1, anime_id:68, anime_library_id:3})
 UserAnime.create({user_id:1, anime_id:102, anime_library_id:4})
 UserAnime.create({user_id:1, anime_id:18, anime_library_id:6})
 UserAnime.create({user_id:1, anime_id:138, anime_library_id:4})
-UserAnime.create({user_id:1, anime_id:102, anime_library_id:1})
-UserAnime.create({user_id:1, anime_id:65, anime_library_id:2})
+UserAnime.create({user_id:1, anime_id:96, anime_library_id:1})
+UserAnime.create({user_id:1, anime_id:66, anime_library_id:2})
 UserAnime.create({user_id:1, anime_id:134, anime_library_id:3})
 Review.create({user_id:1, anime_id:138 ,user_rating:10, user_start_date:"2015-07-08", user_end_date:"2015-07-20", body:"First of all, I have seen the original FMA and although it was very popular and original, the pacing and conclusion did not sit too well with me. Brotherhood is meant to be a remake of the original, this time sticking to the manga all the way through, but there were people who thought it would spoil the franchise. That myth should be dispelled, as there's only one word to describe this series - EPIC."})
 Review.create({user_id:2, anime_id:138 ,user_rating:9,   body:"Brotherhood is just as entertaining and involving as its predecessor, and it's a testament to Arakawa's skill as a mangaka that she has been able to produce a tale that, at the very least, rivals the original anime adaptation.Yes, Brotherhood is more typically shounen than the other version, but the nice thing about this is that fans are given two very good versions of the same story, and that is something rare in anime."})
@@ -203,7 +203,7 @@ Review.create({user_id:2, anime_id:133 ,   body:"After watching all the FMP seas
 "})
 Review.create({user_id:2, anime_id:41 ,user_rating:8,   body:"While the second installment of the Railgun series picks up almost directly after the conclusion of the first series, A Certain Scientific Railgun S goes for a different kind of approach thematically and in terms of emotional appeal. Overall, there is a larger focus on the troubles of Misaka Mikoto herself. S1 gave a pretty even amount of screen time to all four of our main characters, so she was not put entirely into the spotlight before, but now she leads this show head on following the events that take place during the sisters arc."})
 Review.create({user_id:2, anime_id:100 ,user_rating:6,   body:"I'm not a huge fan of the moe wave, if you want to call it, that has over-saturated the anime market for good part of the last five years. Personally, I don't really wish to encourage a lack of creativity in Japanese studios to continue with the on-going cute girls going cute things mentality, but I have to admit as much as I' might dislike or completely forgo these moe series, something about K-ON!! (and its prequel) keep me entertained."})
-Review.create({user_id:3, anime_id:34 ,user_rating:9, user_start_date:, user_end_date:, body:"Magic, pure magic. Everything that is wrong with Nagisa is right with Tomoyo.
+Review.create({user_id:3, anime_id:34 ,user_rating:9,   body:"Magic, pure magic. Everything that is wrong with Nagisa is right with Tomoyo.
 
 Premise:
 Filial piety is restored, and the father receives his child back into his arms by Tomoyo's grace. All mighty, all holy, all loving Tomoyo. None shall come before the father except by her.
@@ -212,43 +212,48 @@ Basically, its the Tomoyo/Canon ending for Clannad
 
 Conclusion:
 IN one stroke, we fix everything that was wrong with Clannad's ending and avoid the unmitigated catastrophe that was Clannad Afterstory. If that's not worth a ten, I don't know what is. If you're already watching Clannad, watch this, be momentarily happy, and then take the dive and watch Afterstory."})
-Review.create({user_id:3, anime_id:139 ,user_rating:8, user_start_date:, user_end_date:, body:"Fullmetal Alchemist is a mega success, specially the Brotherhood anime. Proof of that is the fact that it's ranked number 2 in this page, since who knows how many months. And, as with any successful product, OVA, specials and movies are created. Unfortunately, in most cases, these products tend to be mediocre at best, therefore, prudent consumers often face these creations with skepticism, or directly not expecting much. So, i watched Brotherhood's special with the intention of having fun, but not expecting anything great or mind blowing. I mean, four fifteen minutes long self conclusive episodes? What could you get of that?. A lot. This is one of the few cases in wich the product took me by surprise."})
-Review.create({user_id:3, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:3, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:3, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:4, anime_id:34 ,user_rating:9, user_start_date:, user_end_date:, body:"This one episode Clannad OVA is to me one that is filled with emotions. Aside from that, it manages to do three things to the Clannad series: One, it provides the romance that was mostly minimal in Clannad. Two, it provides the drama that gradually fell from the plot after Fuko and and Kotomi's arc. And three, it allows satisfaction to Tomoyo supporters, since not everyone was a Nagisa fan. Many people expected Clannad to be a series with significant romantic struggles and a high level of drama, but it instead turned into a slice-of-life comedy after the first one or two arcs."})
-Review.create({user_id:4, anime_id:139 ,user_rating:8, user_start_date:, user_end_date:, body:"The Blind Alchemist is about Ed and Al hearing a rumor that a state alchemist named Judas successfully made a human transmutation to save her daughter from dying and what they see is rather disturbing. The Blind Alchemist showcases more on the consequences of human transmutation and how can affect on people's lives. It's been done in other FMA episodes, but this OVA is still emotionally heartbreaking and a nice start to the OVA Collection."})
-Review.create({user_id:4, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:4, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:4, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:4, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:5, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:5, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:5, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:5, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:5, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:6, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:6, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:6, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:6, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:7, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:7, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:7, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:7, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:8, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:8, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:8, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:8, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:9, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:9, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:9, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:9, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:10, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:10, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:10, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:10, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:10, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:11, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:11, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:11, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
-Review.create({user_id:11, anime_id: ,user_rating:, user_start_date:, user_end_date:, body:})
+Review.create({user_id:3, anime_id:139 ,user_rating:8,body:"Fullmetal Alchemist is a mega success, specially the Brotherhood anime. Proof of that is the fact that it's ranked number 2 in this page, since who knows how many months. And, as with any successful product, OVA, specials and movies are created. Unfortunately, in most cases, these products tend to be mediocre at best, therefore, prudent consumers often face these creations with skepticism, or directly not expecting much. So, i watched Brotherhood's special with the intention of having fun, but not expecting anything great or mind blowing. I mean, four fifteen minutes long self conclusive episodes? What could you get of that?. A lot. This is one of the few cases in wich the product took me by surprise."})
+Review.create({user_id:3, anime_id:80 ,user_rating:7, body:"The Generation of Miracles is a team of dominance who is both feared and respected. The team became a unified group of players who went on to dominate Teikō Middle School with many of its victories. A lot people wonders about their origins and the paths they walked down to achieve such glorious recognition. Luckily, there's some hope because Kuroko no Basket returns in this special episode and gives YOU the viewers, a chance to see their past."})
+Review.create({user_id:3, anime_id:36 ,user_rating:8, body:"I wasn't a big fan of Clannad (rated 5, 8 for After Story) partly because I just didn't like Nagisa. The way she ended up how she ended up annoyed me personally and I was never really a fan of her personality. I always thought of Kyou as the best girl so this OVA was perfect.
+
+Really, the story was just great. Basically what I wanted to happen in the series but I think it acutally worked better for an OVA.
+
+The romance was good. The characters were swell. The developments in the story were on point. "})
+Review.create({user_id:3, anime_id:132 ,user_rating:8, body:"When I first started watching this series, I had very high hopes for this, due to many of my friends saying great things about this series. You can safely say that I was not disappointed.
+
+This series follows a member of the Mithril organization, Sousuke Sagara. He has been assigned with the task of protecting a high school girl, Chidori Kaname, from terrorists and other bad people. To do this, he has to enroll in her high school. Of course, when Sousuke is a stiff with no experience or knowledge whatsoever when it comes to socializing with other people, trouble is predestined to arise.
+"})
+Review.create({user_id:4, anime_id:34 ,user_rating:9,   body:"This one episode Clannad OVA is to me one that is filled with emotions. Aside from that, it manages to do three things to the Clannad series: One, it provides the romance that was mostly minimal in Clannad. Two, it provides the drama that gradually fell from the plot after Fuko and and Kotomi's arc. And three, it allows satisfaction to Tomoyo supporters, since not everyone was a Nagisa fan. Many people expected Clannad to be a series with significant romantic struggles and a high level of drama, but it instead turned into a slice-of-life comedy after the first one or two arcs."})
+Review.create({user_id:4, anime_id:139 ,user_rating:8,   body:"The Blind Alchemist is about Ed and Al hearing a rumor that a state alchemist named Judas successfully made a human transmutation to save her daughter from dying and what they see is rather disturbing. The Blind Alchemist showcases more on the consequences of human transmutation and how can affect on people's lives. It's been done in other FMA episodes, but this OVA is still emotionally heartbreaking and a nice start to the OVA Collection."})
+Review.create({user_id:4, anime_id:80 ,user_rating:7,   body:"This is my first time writing a review... Ive watched this today and after ive watched it, i was like, oh god make the season two air faster... The tense and nervous that i felt when i watched the kuroko no basket which has 26 episodes came back after watching this special episode, there is no doubt that this anime is one of the best anime that ive watched.. The special episodes speaks about kise ryouta P.O.V,, i wont tell any spoilers but if you love this anime then u must watch it! Its worth it,, now im watching reborn and im having a doubt whether i should watched the episode 41 of reborn or this special episode but i ended up watching this... I told to myself that i dont regret watching this first than the ep 41 of reborn coz im starting to love it again after one month passed... And when ayashi told something like hes the one who noticed kuroko's talent, im planning to read the manga *^* ( im not really a manga lover, i rarely read manga.. Only if im being cliffhang by the anime...) im really excited to see the season two and thank god that they already released this ova"})
+Review.create({user_id:4, anime_id:36 ,user_rating:10,   body:"This one episode chapter is beautiful. Everything is perfectly well done in this 20 minutes chapter.
+
+The story is pretty cool. 1/3 of 1 hour, it delivers the story really well. It's informative enough to get me focus, and feel with the emotion of the character. Also, the way the problem develops is amazing. It gets intense with very minute of it, and actually give me a hard time to guess what's going to happen next. It's short but meaningful.
+
+The art is gorgeous as usual. Really eye-catching."})
+Review.create({user_id:4, anime_id:132 ,user_rating:5,   body:"Despite not being much of a mecha fan, I decided to check this series out after a lot of strong recommendations from friends and online sites alike. I was expecting a compelling story, jaw-dropping action scenes, and decent humor. Those predictions went zero for three.
+
+Instead, I got a series which seems to have no clue what kind of story it wants to tell. Is it a romance story framed around action and comedy? Or is it an action series with comedy and romance thrown in? This synthesis can work, as long as the director is talented enough, and as long as putting these different elements together actually makes sense."})
+Review.create({user_id:4, anime_id:55 ,user_rating:8,   body:"If you're reading this and you're a fan of the original Code Geass series (then again who isn't?) and you HAVEN'T seen the Akito the Exiled series yet, here's your TL;DR: Watch it.
+
+This special expands upon the last Akito special, which more or less served to inform the viewers of the new setting, new Knightmares, new characters, new customs, etc. that we're not used to outside of the original series. Now we get to know a little bit more about them and get into doing what Code Geass does best: using geass to advance politically and outdo your opponent and having robot sword battles.
+"})
+Review.create({user_id:5, anime_id:55 ,user_rating:6,   body:"Code Geass: Milking the franchise 2 - Hikisakareshi Yokuryuu is yet another story which is titled under Code Geass so people would watch it.
+
+The story is about that one guy who has nothing to do with Code Geass. He fights mecha and gives his fair share of logic to the series by being alive despite being dead. "})
+Review.create({user_id:5, anime_id:97 ,user_rating:9,   body:"I'm just going to say this straight away: These kind of animes bring out the silly little girl in me. And as I'm a 19-year old guy, it's kind of an unexpected thing, even for me. And I mean this in the most positive way possible.
+
+K-On! follows the story of Hirasawa Yui, a girl who lives a life similar to your average person on the net, except for the internet part. It's difficult to explain without using the words carefree and lazy. In a way, she probably reflects a majority of people I know, including myself, except for the fact she doesn't really have any real life issues other than school. This changes however when she decides to join the Light Music Club, where she now has to learn and play guitar. We also got 3 other characters that will be focused on: Ritsu (drummer), Mio (bass), Tsumugi (keyboard), followed by another one half-way through the first season, namely Azusa (guitar). Inbetween their goal to reach fame, they have a few concerts and a lot of fun. Quite lovely."})
+Review.create({user_id:5, anime_id:37 ,user_rating:9,   body:"I thought i'd write a review for the guys out there that have watched the parent story Index.
+
+I was 100% sure i would never watch this, it looked like a little girls show, and I wasn't wrong. I was pretty bummed there was no news for a third season of Index, so I thought I'd give this a go and test the waters.
+
+If you liked Index, you're almost sure to like this. I got caught up in the clean lines and perfect pacing all too quickly. Something about this anime series speaks to me, and just like Index, a show I also was skeptical about seeing, this Railgun grabbed me and didn't let go."})
+Review.create({user_id:6, anime_id:97 ,user_rating:6,   body:"If K-ON! is the future of slice-of-life moe anime, then the genre is dying. Now, I myself am personally a great fan of the niche genre and have delighted in viewing many anime falling under it, no matter how silly or inane. That's because I don't mind having to turn off my brain to enjoy anime, but I expect to be compensated for doing so, be it by making me laugh, warming my heart, or leaving me with something to remember. K-ON! splendidly failed in all three ways multiple times throughout, and came off as a shoddy effort all around."})
+Review.create({user_id:6, anime_id:37 ,user_rating:8,   body:"Even though I just watched this anime until episode 7 at this time, but I really like it. It's a really fun anime. Very funny and sometimes can be touching too. I really enjoy watching it. The main characters are awesome and very lovable, especially Misaka-sama ^^
+The OP and ED are awesome too.
+A must watch anime for everyone!"})
+Review.create({user_id:7, anime_id:97 ,user_rating:8,   body:"K-ON! is inconsequential fluff. One might compare it to popcorn or cotton candy: a tasty treat, but if you're looking for a meal, it will leave you looking for something more substantial after it's done.
+
+K-ON! follows the tried and true formula of cute girls doing cute things. Based on a 4-koma comic, the series is about several high school girls who form (technically join, but all the previous members graduated) a light music club and follows their activities. The music itself often takes a back seat to the antics of the girls, and audiophiles may find themselves somewhat disappointed if they go in expecting detailed attention to techniques or references to real life bands (there are a couple, but few and far between). There are two concerts in the thirteen episode series, but neither is as impressive as the one from the Live A Live episode of The Melancholy of Haruhi Suzumiya (one of Kyoto Animation's earlier shows), but still very enjoyable. The most common scene in the series features the main girls sitting in the club room snacking on tea and cakes while discussing various mundane events, particularly with the more dedicated girls trying to get the rest to practice."})
+Review.create({user_id:7, anime_id:37 ,user_rating:7,   body:"Let me start off by getting the more controversial stuff out of the way first: This is going to piss a lot of people off, but...I honestly liked Majutsu more than Railgun. The thing I liked about the ToAruVerse was this whole dark mystery surrounding the Magic world. I honestly didn't care much for the Science side. Touma didn't nearly come across as annoying to me as he did with most people, and I just loved the priceless comedy associated with his misfortune. Whilst there was plenty to lol about in Railgun (most of the comedy coming from Kuroko), the comedy wasn't as funny to me. Not to mention that the entire main cast is female. I don't know about the rest of the guys, here, but I need a male character I can connect with. Emotional involvement with the characters is important to me, when watching an anime, and I just can’t get that much from a bunch of girly-girls. Plus Railgun has a lot more 'easy going' feel of things, and I liked Majutsu's Dark and intense feel better. So in the end, Railgun was never really going to be better. Not that it wasn’t much worse. I really love the ToAruVerse but I gave Majutsu a 7, because of it's many flaws and I stand by that. Railgun doesn’t deserve anything less than a 7, though as well. So I guess Railgun is merely just a somewhat weaker 7."})
