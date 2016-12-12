@@ -67,7 +67,7 @@ class AnimeDetails extends React.Component{
         {anime.currentUserReview ? <div className='user-review-details'><UserReviewDetails anime={this.props.anime} review={anime.currentUserReview} /> </div>:
         <div>
         <h6 className='my-review my-rev-alt'>MY REVIEW <img className='add-rev-button clickable' onClick={this.showNewReview}src='https://s3.amazonaws.com/goodanimesvideos/092024-glossy-black-icon-signs-first-aid.png'></img></h6>
-        <span className='add-a-rev-link'onClick={this.showNewReview}>Add a Review</span>
+        <span className='add-a-rev-link'>You have not reviewed this anime yet</span>
         </div>
         }
         </div>

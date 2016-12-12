@@ -52,7 +52,7 @@ class SessionForm extends React.Component{
           <input type='password' name='user[password]' onChange={this.updateForm('password')} id="password"></input>
           <br/>
           <br/>
-          <button>Submit</button>
+          <button className='auth-submit clickable'>Submit</button>
           <ul className='errors'>
             {this.props.errors ? this.props.errors.map((error,idx) => <li key={idx}>{error}</li>) : ""}
           </ul>
