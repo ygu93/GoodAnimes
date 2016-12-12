@@ -44,7 +44,7 @@ def anime_seed
         elsif param == "synopsis" && result[param]!= nil
           anime_params["synopsis"] = result[param].gsub("[i]", "")
           anime_params["synopsis"] = anime_params["synopsis"].gsub("[/i]", "")
-          anime_params["synopsis"] = result[param].gsub("[b]", "")
+          anime_params["synopsis"] = anime_params["synopsis"].gsub("[b]", "")
           anime_params["synopsis"] = anime_params["synopsis"].gsub("[/b]", "")
         else
           anime_params[param] = result[param]
