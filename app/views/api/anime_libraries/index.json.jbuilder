@@ -16,7 +16,7 @@
   json.set! library.id do
     json.id library.id
     json.name library.name
-    json.animes library.user_animes do |user_anime|
+    json.animes library.user_animes.sort { |anime1,anime2| anime1.anime.title <=> anime2.anime.title } do |user_anime|
       json.id user_anime.anime.id
       json.user_anime_id user_anime.id
       json.title user_anime.anime.title

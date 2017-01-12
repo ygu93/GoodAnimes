@@ -4,6 +4,7 @@ class Api::AnimeLibrariesController < ApplicationController
     @anime_libraries = current_user.anime_libraries
     @all_animes = current_user.user_animes
     @all_animes = @all_animes.select {|useranime| useranime.anime_id}.uniq {|anim| anim.anime_id}
+    @all_animes =  @all_animes.sort! { |anime1,anime2| anime1.anime.title <=> anime2.anime.title}
     render "api/anime_libraries/index"
   end
 
