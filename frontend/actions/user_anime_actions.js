@@ -29,9 +29,9 @@ export const destroyUserAnime = (id) => ({
   id
 });
 
-export const removeUserAnime = (id) => ({
+export const removeUserAnime = (userAnime) => ({
   type: REMOVE_USER_ANIME,
-  id
+  userAnime
 });
 
 export const createUserAnime = (userAnime) => ({

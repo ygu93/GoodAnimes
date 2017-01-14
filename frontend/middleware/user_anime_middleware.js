@@ -24,8 +24,8 @@ const UserAnimeMiddleware = ({dispatch}) => next => action => {
     dispatch(receiveUserAnime(data));
   };
   const deleteUserAnimeSuccess = data => {
+    // dispatch(removeUserAnime(data));
     dispatch(requestAllAnimeLibraries());
-
   };
   const errorSuccess = (xhr) => dispatch(receiveUserAnimeErrors(xhr.responseJSON));
 

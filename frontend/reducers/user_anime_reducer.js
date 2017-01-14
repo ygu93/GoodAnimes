@@ -11,9 +11,6 @@ const UserAnimeReducer = (state={}, action) => {
   switch(action.type){
     case RECEIVE_USER_ANIME:
       return merge({}, state, action.userAnime);
-    case REMOVE_USER_ANIME:
-      delete dup[action.id];
-      return dup;
     case RECEIVE_USER_ANIME_ERRORS:
       dup["errors"]  = action.errors;
       return dup;

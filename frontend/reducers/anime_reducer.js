@@ -33,7 +33,7 @@ const AnimeReducer = (state={}, action) => {
       dup.libraries = action.userAnime.libraries;
       return dup;
     case REMOVE_USER_ANIME:
-      dup.libraries = action.id.libraries;
+      dup.libraries = action.userAnime.libraries;
       return dup;
     default:
       return state;

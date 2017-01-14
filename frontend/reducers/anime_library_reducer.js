@@ -53,6 +53,38 @@ const AnimeLibraryReducer = (state={}, action) => {
       let libIdsToChange = Object.keys(dup).filter((key) => action.userAnime.libraries.includes(dup[key].name));
       libIdsToChange.forEach((id) => dup[id].animes.push(action.userAnime));
       return dup;
+    case REMOVE_USER_ANIME:
+      let libIdsToDelete = Object.keys(dup).filter((key) => action.userAnime.libraries.includes(dup[key].name) === false);
+      console.log(libIdsToDelete);
+      libIdsToDelete.forEach((id) => {
+        let indexToDel;
+        dup[id].animes.forEach((anime) => {
+          if(anime.title === action.userAnime.title && id === 0 && action.userAnime.libraries.length === 0){
+            console.log('c1');
+            indexToDel = dup[0].animes.indexOf(anime);
+          }else if(anime.title === action.userAnime.title && id !== 0){
+            console.log('c2');
+            indexToDel = dup[id].animes.indexOf(anime);
+          }else{
+            console.log('c3');
+            indexToDel = -1;
+          }
+        });
+        console.log(indexToDel);
+        if(indexToDel !== -1){
+          dup[id].animes.splice(indexToDel, 1);
+        }
+      });
+
+      let libIdsToModify = Object.keys(dup).filter((key) => libIdsToDelete.includes(key) === false);
+      if(action.userAnime.libraries.length > 0){
+        libIdsToModify.push(0);
+      }
+      libIdsToModify.forEach((libId) => {
+        let animeToDel = dup[libId].animes.filter((anime2) => anime2.title === action.userAnime.title)[0];
+        dup[libId].animes[dup[libId].animes.indexOf(animeToDel)].libraries = action.userAnime.libraries;
+      });
+      return dup;
     default:
       return state;
   }
