@@ -40,7 +40,7 @@ const UserAnimeMiddleware = ({dispatch}) => next => action => {
       updateUserAnime(action.userAnime, receiveUserAnimeSuccess, errorSuccess);
       return next(action);
     case DESTROY_USER_ANIME:
-      deleteUserAnime(action.id, (data)=> dispatch(removeUserAnime(data)));
+      deleteUserAnime(action.id, deleteUserAnimeSuccess);
       return next(action);
 
     default:
