@@ -51,7 +51,7 @@ class Greeting extends React.Component{
       <div className = 'splash'>
         <div className='hero-section'>
           <video id="background-video" loop autoPlay preload>
-            <source src="https://s3.amazonaws.com/goodanimesvideos/splash.mp4" />
+            <source src="https://s3.amazonaws.com/goodanimesvideos/splash3.mp4" />
             Your browser does not support this video.
           </video>
           <div className="hero-overlay"></div>
