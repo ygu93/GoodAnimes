@@ -22,7 +22,8 @@
    height:56px;
    display: block;
    background-color: #f4f1ea;
-   box-shadow: 0 1px 4px rgba(0,0,0,0.15)
+   box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+   border: 0.5px solid rgba(0,0,0,0.15);
  }
 
  nav > li{
@@ -143,6 +144,7 @@
  .logo {
    margin-left: 8%;
  }
+
 
  .logo1{
    font-weight: 300;

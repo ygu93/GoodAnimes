@@ -49,7 +49,7 @@ class AnimeLibraryDetailsItem extends React.Component{
     return(
       <tbody>
         <tr className='anime-library-details-item'>
-          <td onClick ={handleClick(`/anime/${anime.anime_id}`)}><img className='cover-img' src={anime.image}/></td>
+          <td onClick ={handleClick(`/anime/${anime.anime_id}`)}><div className='lib-detail-cover'><img className='cover-img' src={anime.image}/></div></td>
           <td onClick ={handleClick(`/anime/${anime.anime_id}`)} className='library-details-title'>{anime.title}</td>
           <td className='lib-detail-type'>{anime.type}</td>
           <td className='lib-detail-score'>{anime.score}</td>

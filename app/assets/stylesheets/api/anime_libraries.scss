@@ -81,12 +81,13 @@
 }
 
 .lib-detail-cover{
-  min-height: 100px;
+  max-width: 50px;
+  height: 75px;
 }
 
 
+
 .cover-img:hover{
-  // margin-left: 140px;
   // padding-right: 150px;
   // padding-top: 220px;
   background-color: transparent;
@@ -101,9 +102,12 @@
   z-index: 1;
   width: 150px;
   height: 220px;
+  -webkit-transition:all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
-// .lib-details-cover:hover:after {
+
+// .cover-image:hover:after {
 //   background: transparent;
 //   content: " ";
 //   height: 75px;
