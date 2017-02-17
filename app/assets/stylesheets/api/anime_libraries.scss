@@ -14,6 +14,7 @@
 .anime-library-details{
   border-collapse: collapse;
 }
+
 .anime-library-details-item img{
   width:50px;
   height: 75px;
@@ -77,6 +78,45 @@
 
 .library-details-title{
   width:25%;
+}
+
+.lib-detail-cover{
+  min-height: 100px;
+}
+
+
+.cover-img:hover{
+  // margin-left: 140px;
+  // padding-right: 150px;
+  // padding-top: 220px;
+  background-color: transparent;
+  background-repeat: no-repeat no-repeat;
+  background-size: cover;
+  border-bottom-left-radius:20px;
+  border-bottom-right-radius:20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius:20px;
+  box-shadow: rgba(63, 52, 60, 0.55) 0 0 8px 8px;
+  position: absolute;
+  z-index: 1;
+  width: 150px;
+  height: 220px;
+}
+
+// .lib-details-cover:hover:after {
+//   background: transparent;
+//   content: " ";
+//   height: 75px;
+//   left: 0;
+//   position: absolute;
+//   top: 0;
+//   width: 210px;
+//   z-index: 20;
+// }
+
+*{
+  -webkit-transition:all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
 }
 
 .libraries > span{
@@ -327,6 +367,10 @@
   color: red;
   font-weight: bold;
   cursor: pointer;
+}
+
+.lib-detail-type{
+  height: 75px;
 }
 
 .lib-detail-delete{
