@@ -2,24 +2,31 @@
 [Heroku link][heroku]
 [heroku]: https://goodanimes.herokuapp.com/
 
-GoodAnimes is a single page web app that is designed for both new and old watchers of anime to find new animes to watch and keep track of the ones they've already watched. It is built with a rails backend, react/redux frontend and a postgres database.
+GoodAnimes is a content discovery platform for all types of anime watchers. It allows fans to keep track of any animes they have or are interested in watching and discover new animes to watch. Goodanimes is built with a React/Redux frontend and a Rails/PostGreSQL backend.
 
 ## Seed Data
-Goodanimes gets its anime seed data via myanimelist's API, it make several search queries to the api and converts the XML response to an object that can be used to create an anime mode.
+Goodanimes gets its anime seed data via myanimelist's API, it makes several search queries to the api and parses the XML response to create anime entries for the database. This allows each anime entry to have the most accurate and detailed information from episode count to a concise summary.
 
 ## Features and Implementation
 
-Goodanimes uses the React Router to keep all of its content on a single root page. While navigating the site, such as user data, anime, and reviews are all managed in a local store. It gets this information from the backend rails API, which serves data in json format using jbuilder. To further condense the number of routes in the react router, the site uses modals for several of its features. These include the login form and the create/edit  review form.
+Goodanimes uses the React Router to keep all of its content on a single root page. While navigating the site, user data, anime, and reviews are all managed in a local store. It gets this information from the backend rails API, which serves data in JSON format using jbuilder. To further condense the number of routes in the react router, the site uses modals for several of its features. These include the login form and the create/edit  review form.
 
 <img src='./readme-images/modal.png'/>
 
 ###View all your libraries
-You can view all the animes you've added to your libraries via the library index. The relevant information is fetched for you in the backend by filtering the libraries to the current user's using active record. Then jbuilder is used to feed the relevant information with active record relationships. Each library object contains its anime objects and such and no additional information needs to be retrieved from the front end. An artificial all library is also generated to show the unique animes in the users library.
+The home page after login is the libraries index page. Here a user is displayed an index of all their libraries and as well as every anime entry in each library. This is achieved using Active Record relations with JBuilder to create an API response with all the necessary information. The backend is structured as such that animes, users, and anime_libraries are all connected by a join table known as user_anime. This allows me to pull up the relevant information about which animes a library contains as well as the user review info for that anime if it exists. In addition, an "All" library is dynamically generated from this API response to replicate the "All" bookshelf a user has when they use Goodreads. I decided to dynamically generate this because the
+"All" bookshelf on Goodreads does not exist as an actual shelf. I cannot add books to my "All" bookshelf so it didn't make sense to me create an "All" bookshelf object for every user. Instead I used the same tools as above, ActiveRecord and JBuilder to generate this library for me and for the library to always be the first element of the API response.
 
 <img src='./readme-images/libindex.png'/>
 
+### Add Animes to libraries
+Users can add animes to any or all of their libraries from a menu on the details page of an Anime. The dropdown menu shows all the libraries of an Anime already belongs to. This menu features both checkboxes and radio buttons to distinguish functionality. A user starts with three libraries that cannot be deleted, Watched, Plan to Watch and Currently Watching. These denote statuses for an anime much like how Goodreads handles statuses by placing them into bookshelves titled Reading, Finished Reading, etc. These three libraries in the menu are denoted by a radio button since you can only select one radio button at a time, it makes no sense for someone to "Plan to Watch" an Anime they are "currently watching" so I eliminate that option for the user. The checkboxes are user created custom libraries. These can be any libraries you want to further categorize your anime whether its by genre or "Friends Recommendations", etc. All adding and deleting from libraries are done dynamically so if you uncheck a box and check it, it will delete the anime and then read it again. This is designed to give the user the best possible experience so that there is one less clicked needed to be made to save changes. 
+
+<img src='./readme-images/dropdownmenu.png'/>
+
+
 ### Add reviews to animes
-Reviews can be added to animes by two different places, the anime show page and the library index. These are accomplished via modals. Reviews are retrieved by both the anime and the library using the backend. Then custom actions in redux are created to either update the library's state or the anime page's state based on the location prop that is passed to the container. Like the library all the data is called from just the anime show controller.
+Reviews can be added to animes by two different places, the anime show page and the library index. These are accomplished via modals. Reviews are retrieved by both the anime and the library using the relationship that an anime has many reviews. Then custom actions in redux are created to either update the library's state or the anime page's state based on the location prop that is passed to the container. Like the library all the data is called from just the anime show controller.
 ```ruby
 {
 "id": 138,
@@ -56,6 +63,7 @@ Reviews can be added to animes by two different places, the anime show page and 
 "created_at": "2016-11-11"
 },
 ```
+
 
 
 
