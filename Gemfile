@@ -33,8 +33,18 @@ gem 'kaminari'
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'rspec-rails'
+  gem 'factory_girl_rails'
+
+  gem 'byebug'
+  gem 'pry-rails'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'shoulda-matchers', '~>3.1'
+  gem 'faker'
+  gem 'launchy'
 end
 
 group :development do
