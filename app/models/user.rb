@@ -2,6 +2,7 @@ class User < ApplicationRecord
   validates :username, :password_digest, :session_token, presence:true
   after_initialize :ensure_session_token
   validates :password, length: { minimum:6, allow_nil:true }
+  validates :username, uniqueness: true
   has_many :anime_libraries
   has_many :user_animes
   has_many :animes, through: :user_animes
@@ -25,7 +26,7 @@ class User < ApplicationRecord
 
   def reset_session_token!
     self.session_token = SecureRandom.urlsafe_base64
-    self.save
+    self.save!
     self.session_token
   end
 
