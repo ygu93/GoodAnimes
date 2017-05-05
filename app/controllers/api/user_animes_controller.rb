@@ -27,7 +27,7 @@ class Api::UserAnimesController < ApplicationController
   def destroy
     @user_anime = UserAnime.find_by_id(params[:id])
     @user_anime.destroy
-    render 'api/user_animes/destroy'
+    render json: 'api/user_animes/destroy'
   end
 
 
