@@ -45,6 +45,7 @@ group :test do
   gem 'shoulda-matchers', '~>3.1'
   gem 'faker'
   gem 'launchy'
+  gem 'rails-controller-testing'
 end
 
 group :development do
