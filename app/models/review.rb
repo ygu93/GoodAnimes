@@ -6,7 +6,7 @@ class Review < ApplicationRecord
 
   def has_one_field
     if user_start_date.blank? && user_end_date.blank? && user_rating.blank? && body.blank?
-      errors[:field] = "Can't be Blank"
+      errors.add(:field, "Can't be Blank")
     end
   end
 end
