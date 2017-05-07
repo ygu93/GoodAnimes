@@ -71,6 +71,27 @@ describe('Reducers', () => {
       });
     });
 
+    describe('handling the LOGOUT action', () => {
+      let oldState;
+      let action;
+
+      beforeEach(() => {
+        oldState = { currentUser: { username: 'Tohsaka Rin' }, errors: [] };
+        action = {
+          type: 'LOGOUT'
+        }
+      })
+      it('should set currentUser to null', () => {
+        const state = SessionReducer(oldState, action);
+        expect(state.currentUser).toBeNull();
+      })
+
+      it('should wipe the errors array', () => {
+        const state = SessionReducer(oldState, action);
+        expect(state.errors).toEqual([]);
+      })
+    })
+
 
   });
 });
