@@ -21,7 +21,7 @@ const SessionReducer = (state = _defaultState, action) => {
       return dup;
     case LOGOUT:
       dup.currentUser = null;
-      dup.errrors = [];
+      dup.errors = [];
       return dup;
     default:
        return state;
