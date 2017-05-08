@@ -18,7 +18,10 @@ RSpec.describe User, type: :model do
   end
 
   describe 'class methods' do
-    # user = User.create({username:"Guest", password:"password"})
+
+    before(:each) do
+      FactoryGirl.create(:user)
+    end
 
     describe '::find_by_credentials' do
       it "should return nil when user doesn't exist" do
@@ -30,15 +33,20 @@ RSpec.describe User, type: :model do
       end
 
       it "should return user when both username and password is correct" do
-        expect(User.find_by_credentials('Guest', 'password')).to_not eq(nil)
+        expect(User.find_by_credentials('Arturia', 'pendragon')).to_not eq(nil)
       end
     end
   end
 
   describe 'instance methods' do
+
+    before(:each) do
+      FactoryGirl.create(:user)
+    end
+
     describe '#reset_session_token!' do
       it "resets the user's session_token to a new token" do
-        user = User.find_by_id(1)
+        user = User.find_by_username('Arturia')
         session_token = user.session_token
         user.reset_session_token!
         expect(session_token).to_not eq(user.session_token)
