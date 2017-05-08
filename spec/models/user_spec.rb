@@ -35,4 +35,15 @@ RSpec.describe User, type: :model do
     end
   end
 
+  describe 'instance methods' do
+    describe '#reset_session_token!' do
+      it "resets the user's session_token to a new token" do
+        user = User.find_by_id(1)
+        session_token = user.session_token
+        user.reset_session_token!
+        expect(session_token).to_not eq(user.session_token)
+      end
+    end
+  end
+
 end
