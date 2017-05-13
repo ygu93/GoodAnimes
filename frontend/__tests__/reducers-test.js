@@ -94,4 +94,23 @@ describe('Reducers', () => {
 
 
   });
+  describe('RootReducer', ()=>{
+    let testStore;
+
+    beforeAll(() => {
+      testStore = createStore(RootReducer)
+    })
+
+    it('exports a function', () => {
+      expect(typeof RootReducer).toEqual('function');
+    })
+
+    it('includes the SessionReducer under key `session`', ()=>{
+      const session = { user:{id:1, username:'Ayase_Chihaya' }, errors:[] };
+      const action = { type: 'RECEIVE_CURRENT_USER', currentUser: session };
+      testStore.dispatch(action);
+
+      expect(testStore.getState().session).toEqual(SessionReducer({}, action));
+    })
+  })
 });
