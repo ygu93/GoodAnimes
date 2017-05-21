@@ -2,7 +2,7 @@ import React from 'react';
 import { mount } from 'enzyme';
 import AnimeIndexItem from '../anime_index_item.jsx';
 import TestUtils from 'react-addons-test-utils';
-import { hashHistory, push } from 'react-router';
+import { hashHistory } from 'react-router';
 
 describe('AnimeIndexItem', () => {
   let anime;
@@ -53,10 +53,25 @@ describe('AnimeIndexItem', () => {
                                                         isActive } };
 
     animeIndexItemWrapper = mount(<AnimeIndexItem anime={anime}/>, { context });
-  })
+  });
 
   test(' should be an object', () => {
-    console.log(animeIndexItemWrapper.find('img').props());
     expect(typeof animeIndexItemWrapper).toEqual('object');
+  });
+
+  test("should render an image of the anime's cover picture", () => {
+    const img = animeIndexItemWrapper.find('img').props();
+    expect(img.src).toBe('notrealimage.com/test');
+  });
+
+  test("should render a <p> tag with the anime's title", () => {
+    const p = animeIndexItemWrapper.find('p').props();
+    expect(p.children).toBe('Kimi no Na Wa');
+  });
+
+  test('clicking on the image takes the user to the anime details page', () => {
+    const animeItem = animeIndexItemWrapper.find('li');
+    animeItem.simulate('click', { preventDefault() { } });
+    expect(push).toBeCalledWith(`/anime/${anime.id}`)
   })
-})
+});
