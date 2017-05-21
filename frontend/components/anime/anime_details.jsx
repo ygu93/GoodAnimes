@@ -42,12 +42,12 @@ class AnimeDetails extends React.Component{
       <div className = "anime-details-page">
         <ul className = "anime-details">
           <div className='anime-info'>
-          <img src={anime.image}></img>
-          <div>
-          <div className='dropdown-container' onMouseLeave={this.closeDropdown}>
-            <button className='dropdown-button clickable' onMouseOver={this.showDropdown}>Add to Libraries</button>
-            <div className='dropdown'>{this.state.dropdown ? <AddUserAnimeContainer animeLibrary={this.props.animeLibrary} anime={anime} currentUser={this.props.currentUser}/> : ""}</div>
-          </div>
+            <img src={anime.image}></img>
+            <div>
+            <div className='dropdown-container' onMouseLeave={this.closeDropdown}>
+              <button className='dropdown-button clickable' onMouseOver={this.showDropdown}>Add to Libraries</button>
+              <div className='dropdown'>{this.state.dropdown ? <AddUserAnimeContainer animeLibrary={this.props.animeLibrary} anime={anime} currentUser={this.props.currentUser}/> : ""}</div>
+            </div>
             <li><h4>Information</h4></li>
             <li><span>Type:</span> {anime.media_type}</li>
             <li><span>Episodes:</span> {anime.episodes}</li>
@@ -56,11 +56,11 @@ class AnimeDetails extends React.Component{
             <li><span>Ended On:</span> {anime.end_date}</li>
             <li><span>Score:</span> {anime.score}</li>
             </div>
-          </div>
+      </div>
           <div className='anime-desc-right'>
-          <li className='anime-title'><h3>{anime.title}</h3></li>
-          <h4 className='synopsis'>Synopsis</h4>
-          <li dangerouslySetInnerHTML={{__html:anime.synopsis}}></li>
+            <li className='anime-title'><h3>{anime.title}</h3></li>
+            <h4 className='synopsis'>Synopsis</h4>
+            <li dangerouslySetInnerHTML={{__html:anime.synopsis}}></li>
           </div>
         </ul>
         <div className='your-review'>

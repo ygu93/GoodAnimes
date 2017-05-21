@@ -1,5 +1,5 @@
 import React from 'react';
-import { mount, shallow } from 'enzyme';
+import { shallow } from 'enzyme';
 import AnimeIndexContainer from '../anime_index_container';
 import AnimeIndex from '../anime_index';
 import AnimeIndexItem from '../anime_index_item';
